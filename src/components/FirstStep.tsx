@@ -58,7 +58,8 @@ export default function FirstStep() {
         {
             label: "Tiktok",
             id: "pil3"
-        },        {
+        },        
+        {
             label: "Linkedin",
             id: "pil4"
         },        
@@ -74,7 +75,7 @@ export default function FirstStep() {
 
     return (
         <>
-            <div className='lg:mx-[100px] font-Rajdhani lg:mt-[100px] min-h-screen'>
+            <div className='lg:mx-[100px] font-Rajdhani lg:mt-[100px]'>
                 <h1 className='font-medium text-[#373F41] lg:text-[28px]'>Data Personal</h1>
                 <h3 className='text-[#8F8F8F] lg:text-[16px]'>Masukkan data diri kamu untuk memulai kelas. Satu formulir hanya bisa digunakan untuk satu Mata Kuliah (Kursus), namun teman-teman bisa memilih beberapa Sesi Pelajaran di dalam satu mata kuliah tersebut.</h3>
 
@@ -86,7 +87,7 @@ export default function FirstStep() {
                                 <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
                                     <MdEmail className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
                                 </div>
-                                <input type="text" name='email' className='border outline-none focus:ring-1 focus:ring-[#3C64B1] w-[484px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required placeholder='Misal: nama@gmail.com'/>
+                                <input type="text" name='email' className='border outline-none focus:ring-2  focus:text-[#3C64B1] focus:ring-[#3C64B1] w-[484px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required placeholder='Misal: nama@gmail.com'/>
                             </div>
 
                             <label className='font-bold  text-[16px]'>Nama Lengkap</label>
@@ -102,7 +103,7 @@ export default function FirstStep() {
                                 {/* <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
                                     <FaUser className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
                                 </div> */}
-                                <input type="tel" name='phone' className='border focus:ring-[#3C64B1] w-[484px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tulis nomor handphone'/>
+                                <input type="tel" name='phone' className='border w-[484px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tulis nomor handphone'/>
                             </div>
 
                             <label className='font-bold text-[16px]'>Program Studi</label>
@@ -111,19 +112,23 @@ export default function FirstStep() {
                                     studi.map((data, index)=> {
                                         return(
                                             <div key={index} className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[10px]'>
-                                                <input type="radio" id={data.id}  name='program_studi' className='border text-[13px] focus:ring-[#3C64B1] border-[#B0B1B0] rounded-2xl p-2' />
+                                                <input type="radio" id={data.id}  name='program_studi' className='border text-[13px] border-[#B0B1B0] rounded-2xl p-2' />
                                                 <label htmlFor={data.id} className="ml-3 text-center">{data.label}</label>
                                             </div>
                                         )
                                     })
                                 }
-                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[10px]'>
-                                    <div className='absolute'>
-                                        <input type="text" name="program_studi" id="lainnya" className='ml-[60px] z-10 p-2 -mt-[10px] outline-none w-[484px]  rounded-2xl border' placeholder='Masukkan program studi'/>
+                                
+                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[10px] z-50 bg-white'>
+                                    <div className="relative z-1000">
+                                        <div className="other z-1000">
+                                            <input type="radio" id="lainnya" name='program_studi' className='relative z-50' />
+                                            <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
+                                        </div>
+                                        
                                     </div>
-                                        <input type="radio" id="lainnya" name='program_studi' className='relative z-50' />
-                                    <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
                                 </div>
+                                <input type="text" name="program_studi" id="lainnya" className='-ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 pr-8 mt-[10px] border z-10' placeholder='Masukkan program studi'/>
                             </div>
 
                             <label className='font-bold  text-[16px]'>Angkatan</label>
@@ -131,7 +136,7 @@ export default function FirstStep() {
                                 <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
                                     <FaSchool className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
                                 </div>
-                                <input type="text" name='fullname' className='border focus:ring-[#3C64B1] w-[484px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tahun Angkatan'/>
+                                <input type="text" name='fullname' className='border w-[484px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tahun Angkatan'/>
                             </div>
 
                             <label className='font-bold text-[16px]'>Universitas</label>
@@ -146,13 +151,16 @@ export default function FirstStep() {
                                         )
                                     })
                                 }
-                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[10px]'>
-                                    <div className='absolute'>
-                                        <input type="text" name="program_studi" id="lainnya" className='ml-[60px] z-10 p-2 -mt-[10px] outline-none w-[484px]  rounded-2xl border' placeholder='Masukkan program studi'/>
+                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[10px] z-50 bg-white'>
+                                    <div className="relative z-1000">
+                                        <div className="other z-1000">
+                                            <input type="radio" id="lainnya" name='program_studi' className='relative z-50' />
+                                            <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
+                                        </div>
+                                        
                                     </div>
-                                        <input type="radio" id="lainnya" name='program_studi' className='relative z-50' />
-                                    <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
                                 </div>
+                                <input type="text" name="program_studi" id="lainnya" className='-ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 mt-[10px] border z-10' placeholder='Masukkan universitas'/>
                             </div>
 
                             <label className='font-bold text-[16px]'>Darimana anda mengetahui tentang Torche</label>
@@ -167,18 +175,18 @@ export default function FirstStep() {
                                         )
                                     })
                                 }
-                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[10px]'>
-                                    <div className='absolute'>
-                                        <input type="text" name="program_studi" id="lainnya" className='ml-[60px] z-10 p-2 -mt-[10px] outline-none w-[484px]  rounded-2xl border' placeholder='Masukkan program studi'/>
+                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[10px] z-50 bg-white'>
+                                    <div className="relative z-1000">
+                                        <div className="other z-1000">
+                                            <input type="radio" id="lainnya" name='program_studi' className='relative z-50' />
+                                            <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
+                                        </div>
+                                        
                                     </div>
-                                        <input type="radio" id="lainnya" name='program_studi' className='relative z-50' />
-                                    <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
                                 </div>
+                                <input type="text" name="program_studi" id="lainnya" className='-ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 pr-8 mt-[10px] border z-10' placeholder='Masukkan sumber lain'/>
                             </div>
-                        </div>
 
-                        <div>
-                            <button type='submit' className='mr-0 ml-auto block bg-[#3C64B1] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold'>Lanjutkan</button>
                         </div>
                     </form>
                 </div>
