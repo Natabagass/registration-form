@@ -12,6 +12,9 @@ module.exports = {
       fontFamily:{
         "Rajdhani" : "Rajdhani",
         "Cairo" : "Cairo"
+      },
+      boxShadow:{
+        'effect': '0px 20px 15px rgba(88, 133, 233, 0.15)'
       }
     },
   },
