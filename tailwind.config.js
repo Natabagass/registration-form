@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens:{
+        'vsm': '375',
+        'desk': '1440'
+      },
       fontFamily:{
         "Rajdhani" : "Rajdhani",
         "Cairo" : "Cairo"
