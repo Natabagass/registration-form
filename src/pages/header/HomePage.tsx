@@ -1,13 +1,13 @@
-import { NextPage } from "next";
+import HeroSection from "../../components/Hero"
+import FirstStep from "../../components/FirstStep"
+import ProgressBar from "../../components/MultiStepProgress"
 
-const HeaderPage: NextPage = () => {
+export default function HeaderPage() {
     return ( 
-        <div>
-            <div>
-                <h1>Test</h1>
-            </div>
-        </div>
+        <>
+            <HeroSection/>
+            <ProgressBar/>
+            <FirstStep/>
+        </>
     );
 }
-
-export default HeaderPage;
