@@ -8,8 +8,8 @@ export default function HeaderPage() {
         <>
             <HeroSection/>
             <ProgressBar/>
-            <FirstStep/>
-            {/* <SecondStep/> */}
+            {/* <FirstStep/> */}
+            <SecondStep/>
         </>
     );
 }
