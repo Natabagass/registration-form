@@ -2,77 +2,9 @@ import React from 'react'
 import {Button, TextField} from '@mui/material'
 import { MdEmail } from "react-icons/md";
 import { FaUser, FaSchool } from "react-icons/fa";
+import { sosmed, univ, studi } from "../dummy-data";
 
 export default function FirstStep() {
-    const studi = [
-        {
-            label: "S1 Teknik Kimia",
-            id: "pil1"
-        },
-        {
-            label: "S1 Teknologi Bioproses",
-            id: "pil2"
-        },
-        {
-            label: "S2 Teknik Kimia",
-            id: "pil3"
-        },
-        {
-            label: "S3 Teknik Kimia",
-            id: "pil4"
-        },
-    ]
-
-    const univ = [
-        {
-            label: "Universitas Indonesia",
-            id: "pil1"
-        },
-        {
-            label: "Institut Teknologi Bandung",
-            id: "pil2"
-        },
-        {
-            label: "Institut Teknologi Sepuluh November",
-            id: "pil3"
-        },        
-        {
-            label: "Universitas Sriwijaya",
-            id: "pil4"
-        },        
-        {
-            label: "Universitas Muhammadiyah Surakarta",
-            id: "pil5"
-        },
-    ]
-
-    const sosmed = [
-        {
-            label: "Instagram",
-            id: "pil1"
-        },
-        {
-            label: "Facebook",
-            id: "pil2"
-        },
-        {
-            label: "Tiktok",
-            id: "pil3"
-        },        
-        {
-            label: "Linkedin",
-            id: "pil4"
-        },        
-        {
-            label: "Line",
-            id: "pil5"
-        },
-        {
-            label: "Teman atau Keluarga",
-            id: "pil6"
-        },
-    ]
-
     return (
         <>
             <div className='lg:mx-[100px] mx-[20px] lg:w-[820px] xl:w-[1300px] lg:mt-[100px]'>
@@ -180,7 +112,6 @@ export default function FirstStep() {
                                             <input type="radio" id="lainnya" name='sosmed' className='relative z-50' />
                                             <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
                                         </div>
-                                        
                                     </div>
                                 </div>
                                 <input type="text" name="sosmed" id="lainnya" className='-ml-[50px]  mr-[20px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' placeholder='Masukkan sumber lain'/>
