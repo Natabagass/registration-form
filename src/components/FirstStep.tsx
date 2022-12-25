@@ -44,8 +44,8 @@ export default function FirstStep() {
                                     studi.map((data, index)=> {
                                         return(
                                             <div key={index} className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[20px]'>
-                                                <input type="radio" id={data.id}  name='program_studi' className='border text-[13px] border-[#B0B1B0] rounded-2xl p-2' />
-                                                <label htmlFor={data.id} className="ml-3 text-center">{data.label}</label>
+                                                <input type="radio" id={data.id}  name='program_studi' className='border border-[#B0B1B0] rounded-2xl p-2' />
+                                                <label htmlFor={data.id} className="ml-3 text-[13px] text-center">{data.label}</label>
                                             </div>
                                         )
                                     })
@@ -55,11 +55,11 @@ export default function FirstStep() {
                                     <div className="relative z-1000">
                                         <div className="other z-1000">
                                             <input type="radio" id="lainnya" name='program_studi' className='relative z-50' />
-                                            <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
+                                            <label htmlFor="lainnya" className="ml-3 text-[13px] text-center">Lainnya</label>
                                         </div>
                                     </div>
                                 </div>
-                                <input type="text" name="program_studi" id="lainnya" className='-ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' placeholder='Masukkan program studi'/>
+                                <input type="text" name="program_studi" id="lainnya" className='-ml-[50px] mr-[20px] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' placeholder='Masukkan program studi'/>
                             </div>
 
                             <label className='font-bold  text-[16px]'>Angkatan</label>
@@ -75,23 +75,24 @@ export default function FirstStep() {
                                 {
                                     univ.map((data, index)=> {
                                         return(
-                                            <div key={index} className='border border-[#B0B1B0] mr-[15px] rounded-2xl p-2 mt-[20px]'>
+                                            <div key={index} className='border border-[#B0B1B0] mr-[30px] rounded-2xl p-2 mt-[20px]'>
                                                 <input type="radio" id={data.id}  name='universitas' className='border text-[13px] border-[#B0B1B0] rounded-2xl p-2' />
-                                                <label htmlFor={data.id} className="ml-3 text-center">{data.label}</label>
+                                                <label htmlFor={data.id} className="ml-3 text-center text-[13px]">{data.label}</label>
                                             </div>
                                         )
                                     })
                                 }
-                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[20px] z-50 bg-white'>
-                                    <div className="relative z-1000">
-                                        <div className="other z-1000">
-                                            <input type="radio" id="lainnya" name='universitas' className='relative z-50' />
-                                            <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
+                                <div className='flex flex-row'>
+                                    <div className='border border-[#B0B1B0] flex flex-col mr-[20px] rounded-2xl p-2 mt-[20px] z-50 bg-white'>
+                                        <div className="relative z-1000">
+                                            <div className="other z-1000">
+                                                <input type="radio" id="lainnya" name='universitas' className='relative z-50' />
+                                                <label htmlFor="lainnya" className="ml-3 text-center text-[13px]">Lainnya</label>
+                                            </div>
                                         </div>
-                                        
                                     </div>
+                                    <input type="text" name="universitas" id="lainnya" className='text-[13px] -ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 mt-[20px] border z-10' placeholder='Masukkan universitas'/>
                                 </div>
-                                <input type="text" name="universitas" id="lainnya" className='-ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 mt-[20px] border z-10' placeholder='Masukkan universitas'/>
                             </div>
 
                             <label className='font-bold text-[16px]'>Darimana anda mengetahui tentang Torche</label>
@@ -101,7 +102,7 @@ export default function FirstStep() {
                                         return(
                                             <div key={index} className='border border-[#B0B1B0] mr-[5px] lg:mr-[30px] rounded-2xl p-2 mt-[20px]'>
                                                 <input type="radio" id={data.id}  name='sosmed' className='border text-[13px] border-[#B0B1B0] rounded-2xl p-2' />
-                                                <label htmlFor={data.id} className="ml-3 text-center">{data.label}</label>
+                                                <label htmlFor={data.id} className="ml-3 text-center text-[13px]">{data.label}</label>
                                             </div>
                                         )
                                     })
@@ -110,11 +111,11 @@ export default function FirstStep() {
                                     <div className="relative z-1000">
                                         <div className="other z-1000">
                                             <input type="radio" id="lainnya" name='sosmed' className='relative z-50' />
-                                            <label htmlFor="lainnya" className="ml-3 text-center">Lainnya</label>
+                                            <label htmlFor="lainnya" className="ml-3 text-center text-[13px]">Lainnya</label>
                                         </div>
                                     </div>
                                 </div>
-                                <input type="text" name="sosmed" id="lainnya" className='-ml-[50px]  mr-[20px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' placeholder='Masukkan sumber lain'/>
+                                <input type="text" name="sosmed" id="lainnya" className='-ml-[50px]  mr-[20px] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' placeholder='Masukkan sumber lain'/>
                             </div>
                         </div>
                         <div>

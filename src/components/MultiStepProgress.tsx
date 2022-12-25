@@ -51,7 +51,7 @@ const MultiStepProgress = () => {
                 ))}
             </Stepper>
 
-            <Box className='lg:-mx-[200px]'>
+            <Box className='xl:-mx-[200px]'>
                 {{
                     0: <FirstStep/>,
                     1: <SecondStep/>
