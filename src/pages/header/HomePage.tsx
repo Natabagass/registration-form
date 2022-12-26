@@ -40,7 +40,7 @@ export default function HeaderPage() {
         },
         [`& .${stepConnectorClasses.line}`]: {
             borderColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
-            borderTopWidth: 3,
+            borderTopWidth: 4,
             borderRadius: 1,
         },
     }));
@@ -55,7 +55,7 @@ export default function HeaderPage() {
                 color: '#5885E9',
             }),
                 '& .QontoStepIcon-completedIcon': {
-                color: '#5885E9',
+                backgroundColor: '#5885E9',
                 zIndex: 1,
                 fontSize: 18,
             },
@@ -86,10 +86,13 @@ export default function HeaderPage() {
     return ( 
         <>
             <HeroSection/>
-            <Stepper alternativeLabel connector={<QontoConnector/>} className="w-fit mt-[100px] mx-auto">
+            <Stepper alternativeLabel connector={<QontoConnector/>} className="lg:w-[600px] vsm:w-[344px] mt-[100px] mx-auto">
                 {steps.map((label) => (
-                    <Step key={label}>
-                        <StepLabel className="text-[13px] text-black font-Cairo" StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+                    <Step  key={label}>
+                        <StepLabel StepIconComponent={QontoStepIcon} >
+                            <div className="text-[13px] text-black font-Cairo">
+                                {label}
+                            </div></StepLabel>
                     </Step>
                 ))}
             </Stepper>
