@@ -51,13 +51,6 @@ const MultiStepProgress = () => {
                 ))}
             </Stepper>
 
-            <Box className='xl:-ml-[200px]'>
-                {{
-                    0: <FirstStep/>,
-                    1: <SecondStep/>
-                }[activeStep]}
-            </Box>
-
             <Stack
             direction='row'
             className="pt-2 pb-7"
