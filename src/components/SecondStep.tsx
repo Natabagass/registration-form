@@ -7,35 +7,42 @@ export default function SecondStep() {
     return (
         <>
             <form>
-                <div className='lg:mx-[100px] mx-[30px] mt-[50px]'>
+                <div className='lg:mx-[100px] mx-[30px] mt-[50px] w-[444px] lg:w-[850px] xl:w-[1320px]'>
                     <h1 className='text-[22px] font-medium font-Rajdhani'>Kelas Pilihan</h1>
-                    <h3 className='text-[12px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Pilih salah satu metode pembelajaran dan mata kuliah (kursus) serta materi yang ingin kamu pelajari atau diskusikan. Khusus <span className='font-bold'>Kelas Konsultasi</span> dan <span className='font-bold'>Kelas Persiapan Ujian</span>, jika jumlah materi yang dipilih melebihi batas yang ditentukan, maka Torche Education berhak untuk mengeliminasi materi sesuai dengan batas yang ditentukan. Sebagai contoh: Jika kalian memilih 3 materi (misalkan A, B, C) namun hanya ingin 1 pertemuan, maka Torche Education berhak mengeliminasi 1 materi. </h3>
+                    <h3 className='xl:text-[16px] vsm:text-[12px] lg:text-[14px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Pilih salah satu metode pembelajaran dan mata kuliah (kursus) serta materi yang ingin kamu pelajari atau diskusikan. Khusus <span className='font-bold'>Kelas Konsultasi</span> dan <span className='font-bold'>Kelas Persiapan Ujian</span>, jika jumlah materi yang dipilih melebihi batas yang ditentukan, maka Torche Education berhak untuk mengeliminasi materi sesuai dengan batas yang ditentukan. Sebagai contoh: Jika kalian memilih 3 materi (misalkan A, B, C) namun hanya ingin 1 pertemuan, maka Torche Education berhak mengeliminasi 1 materi. </h3>
 
                     <div>
                         <h1 className='font-bold mt-[30px] font-Cairo'>Metode Pembelajaran</h1>
-                        <div className='w-[444px] lg:w-[850px] xl:w-[1320px]'>
+                        <div>
                             <div className='flex flex-col lg:flex-row '>
                                 {
                                     kelas.map((item, index) => {
                                         return(
-                                            <div className='border border-[#A7ABB8] mx-[30px] -ml-[2px] rounded-xl text-center mt-[20px]' key={index}>
-                                                <div className=' text-[#5885E9] w-fit mx-auto rounded-full my-[50px] text-[20px] bg-[#F5F7FF] p-5'>{item.icon}</div>
-                                                <h1 className='font-Cairo font-bold text-[19px] mb-[20px]'>{item.title}</h1>
-                                                <h3 className='text-[14px] font-Cairo mx-[20px] mb-[20px]'>{item.desc}</h3>
-                                                <hr className='mx-[30px] border-[#B1C4F0]'/>
-                                                <div className='mx-[30px] mt-[30px]'>
-                                                    {
-                                                        item.benefit.map((sub:any) => {
-                                                            return(
-                                                                <div className='flex flex-col text-[#727272] text-[13px]'>
-                                                                    <div className='flex flex-row font-Cairo text-left mb-[10px]'>
-                                                                        <span className='text-[#5885E9] mb-[10px] text-[12px]'>{sub.icon}</span>
-                                                                        <h1 className='ml-[10px] -mt-[5px]'>{sub.text}</h1>
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                        })
-                                                    }
+                                            <div className='border hover:border-[#4D74CC]  border-[#A7ABB8] mx-[30px] -ml-[2px] rounded-xl text-center mt-[20px]' key={index}>
+                                                <div className=''>
+                                                    <input type="radio" name='metode' id='metodePembelajaran' className='checked:bg-[#5885E9] checked:text-white' value={item.desc} />
+                                                    <label htmlFor="metodePembelajaran">
+                                                        <div className=''>
+                                                            <span className='text-[#5885E9] rounded-full my-[50px] flex mx-auto w-fit hover:bg-[#5885E9] hover:text-white p-5 text-[20px]  bg-[#F5F7FF]'>{item.icon}</span>
+                                                            <h1 className='font-Cairo font-bold text-[19px] mb-[20px]'>{item.title}</h1>
+                                                            <h3 className='text-[14px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>{item.desc}</h3>
+                                                            <hr className='mx-[30px] border-[#B1C4F0]'/>
+                                                            <div className='mx-[30px] mt-[30px]'>
+                                                            {
+                                                                item.benefit.map((sub:any) => {
+                                                                    return(
+                                                                        <div className='flex flex-col text-[#494949] text-[14px]'>
+                                                                            <div className='flex flex-row font-Cairo text-left mb-[10px]'>
+                                                                                <span className='text-[#5885E9] mb-[10px] text-[12px]'>{sub.icon}</span>
+                                                                                <h1 className='ml-[10px] -mt-[5px]'>{sub.text}</h1>
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                                })
+                                                            }
+                                                </div>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </div>
                                         )
@@ -86,7 +93,7 @@ export default function SecondStep() {
                                     return(
                                         <div key={index} className='border border-[#B0B1B0] w-[700px] flex-wrap mr-[5px] lg:mr-[30px] rounded-2xl p-2 mt-[20px]'>
                                             <input type="radio"  name='materi' className='border text-[13px] border-[#B0B1B0] rounded-2xl p-2' />
-                                            <label className="ml-3 text-center">{item.title}</label>
+                                            <label className="ml-3 text-center text-[13px] font-Cairo">{item.title}</label>
                                         </div>
                                     )
                                 })

@@ -1,5 +1,5 @@
 import { BsPeopleFill, BsFillFileEarmarkTextFill } from "react-icons/bs";
-import { AiOutlineCheck } from "react-icons/ai";
+import { AiFillCheckCircle } from "react-icons/ai";
 import { HiPencilAlt } from "react-icons/hi";
 import React from 'react'
 
@@ -79,27 +79,27 @@ export const kelas = [
         desc: 'Kelas perkuliahan adalah dimana tutor melakukan presentasi yang komprehensif tentang materi pelajaran yang dipilih oleh siswa. Kami merekomendasikan kelas ini untuk siswa yang ingin meninjau dan memperdalam pemahaman mereka.',
         benefit:[
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'Live Tutoring di Google Meet (100 menit/sesi)'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'1 Sesi sama dengan 1 Materi'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Materi presentasi disediakan'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Rekaman Google Meet disediakan'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Konsultasi gratis di grup Discord'
             }
         ] 
@@ -110,27 +110,27 @@ export const kelas = [
         desc: 'Diskusi terbuka dan kelas di mana siswa dapat bertanya atau berkonsultasi terkait materi pelajaran yang dipilih. Direkomendasikan bagi siswa yang mengerjakan tugas proyek. Para siswa juga didorong untuk memiliki pemahaman dasar dengan materi.',
         benefit:[
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'Live Tutoring di Google Meet (100 menit/sesi)'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'1 sesi sama dengan 2 Materi'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Materi presentasi disediakan'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Rekaman Google Meet disediakan'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Konsultasi gratis di grup Discord'
             }
         ] 
@@ -141,27 +141,27 @@ export const kelas = [
         desc: 'Kelas ini dirancang bagi siswa untuk melakukan tinjauan singkat dan praktik terkait dengan materi pelajaran yang dipilih. Kami merekomendasikan kelas ini untuk siswa yang memiliki jadwal padat dan sudah memiliki pemahaman dasar tentang materi.',
         benefit:[
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'Live Tutoring di Google Meet (100 menit/sesi)'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'1 Sesi sama dengan 2 Materi'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Materi presentasi disediakan'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Rekaman Google Meet disediakan'
             },
             {
-                icon: <AiOutlineCheck />,
+                icon: <AiFillCheckCircle />,
                 text: 'Konsultasi gratis di grup Discord'
             }
         ] 
