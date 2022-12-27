@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import icon2 from "../assets/img/Vector.png"
 import { SvgIcon } from '@mui/material';
 import { kelas, mataKuliah, materi } from "../dummy-data";
+import { multiStepContext } from '../pages/StepContext';
 
 export default function SecondStep() {
+    const {setStep, userData, setUserData} = useContext(multiStepContext)
     return (
         <>
             <form>
@@ -101,8 +103,8 @@ export default function SecondStep() {
                         </div>
                     </div>
                     <div className='flex flex-row'>
-                        <button type='submit' className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
-                        <button type='submit' className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Berikutnya</button>
+                        <button type='submit' onClick={()=>setStep(1)} className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
+                        <button type='submit' onClick={()=>setStep(3)} className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Berikutnya</button>
                     </div>
                 </div>
             </form>

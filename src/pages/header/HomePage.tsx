@@ -3,15 +3,20 @@ import FirstStep from "../../components/FirstStep"
 import SecondStep from "../../components/SecondStep"
 import ProgressBar from "../../components/MultiStepProgress"
 import {Container, Paper, styled} from '@mui/material'
-import { FormikValues, FormikHelpers } from "formik"
 import {Stepper, StepLabel, Step} from '@mui/material'
 import Check from '@mui/icons-material/Check';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import { StepIconProps } from '@mui/material/StepIcon';
+import { multiStepContext } from "../StepContext"
+import { useContext } from "react"
+import ThirdStep from "../../components/ThirdStep"
+import FourthStep from "../../components/FourthStep"
+import FifthStep from "../../components/FifthStep"
 
 const steps = ['Data Personal', 'Kelas Pilihan', 'Anggota Kelompok belajar', 'Pilih Sesi', 'Selesai']
 
 export default function HeaderPage() {
+    const {currentStep, finalData} = useContext(multiStepContext);
 
     function showStep(step: number){
         switch(step) {
@@ -19,6 +24,12 @@ export default function HeaderPage() {
                 return <FirstStep/>
             case 2:
                 return <SecondStep/>
+            case 3:
+                return <ThirdStep/>
+            case 4:
+                return <FourthStep/>
+            case 5: 
+                return <FifthStep/>
         }
     }
 
@@ -56,8 +67,11 @@ export default function HeaderPage() {
             }),
                 '& .QontoStepIcon-completedIcon': {
                 backgroundColor: '#5885E9',
+                borderRadius: '50%',
                 zIndex: 1,
-                fontSize: 18,
+                width: 14,
+                height: 14,
+                padding: 7
             },
             '& .QontoStepIcon-circle': {
                 width: 14,
@@ -86,7 +100,7 @@ export default function HeaderPage() {
     return ( 
         <>
             <HeroSection/>
-            <Stepper alternativeLabel connector={<QontoConnector/>} className="lg:w-[600px] vsm:w-[344px] mt-[100px] mx-auto">
+            <Stepper alternativeLabel activeStep={currentStep - 1} connector={<QontoConnector/>} className="lg:w-[600px] vsm:w-[344px] mt-[100px] mx-auto">
                 {steps.map((label) => (
                     <Step  key={label}>
                         <StepLabel StepIconComponent={QontoStepIcon} >
@@ -97,7 +111,7 @@ export default function HeaderPage() {
                 ))}
             </Stepper>
             <div>
-                {showStep(1)}
+                {showStep(currentStep)}
             </div>
         </>
     );
