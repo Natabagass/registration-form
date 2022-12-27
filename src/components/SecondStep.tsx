@@ -42,7 +42,7 @@ export default function SecondStep() {
                                                                     )
                                                                 })
                                                             }
-                                                </div>
+                                                        </div>
                                                         </div>
                                                     </label>
                                                 </div>
@@ -62,11 +62,11 @@ export default function SecondStep() {
                                     mataKuliah.map((item, index)=> {
                                         return(
                                             <div className='border border-[#B0B1B0] w-[307px]  mr-[20px] rounded-2xl p-2 mt-[20px] flex-row flex' key={index}>
-                                                <input type="radio" name="matakuliah" className='ml-[20px]' />
-                                                <div className='flex ml-[20px] flex-col'>
+                                                <input type="radio" id='kuliah' name="matakuliah" className='ml-[20px]' />
+                                                <label htmlFor='kuliah' className='flex ml-[20px] flex-col'>
                                                     <h1 className='text-[13px] text-[#151515] font-Cairo'>{item.title}</h1>
                                                     <h3 className='text-[11px] text-[#727272]'>{item.jumlah}</h3>
-                                                </div>
+                                                </label>
                                             </div>
                                         )
                                     })

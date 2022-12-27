@@ -1,6 +1,7 @@
 import { BsPeopleFill, BsFillFileEarmarkTextFill } from "react-icons/bs";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { HiPencilAlt } from "react-icons/hi";
+import { FaRegSadTear, FaRegGrinHearts, FaRegSmileBeam, FaRegMeh, FaRegTired, FaSadTear } from "react-icons/fa"
 import React from 'react'
 
 export const studi = [
@@ -20,6 +21,29 @@ export const studi = [
         label: "S3 Teknik Kimia",
         id: "pil4"
     },
+]
+
+export const rating = [
+    {
+        label: 'Sulit Banget',
+        icon: <FaRegTired/>
+    },
+    {
+        label: 'Agak Sulit',
+        icon: <FaRegSadTear/>
+    },
+    {
+        label: 'Lumayan',
+        icon: <FaRegMeh/>
+    },
+    {
+        label: 'Mudah',
+        icon: <FaRegSmileBeam/>
+    },
+    {
+        label: 'Mudah Banget',
+        icon: <FaRegGrinHearts/>
+    }
 ]
 
 export const univ = [

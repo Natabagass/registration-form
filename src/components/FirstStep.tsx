@@ -95,7 +95,6 @@ export default function FirstStep() {
                                     name="program_studi" 
                                     id="lainnya" 
                                     onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
-                                    value= {userData['program_studi']}
                                     className='-ml-[50px] mr-[20px] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan program studi'/>
                             </div>
