@@ -64,7 +64,7 @@ export default function FirstStep() {
                                                     <input 
                                                         type="radio" 
                                                         onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
-                                                        value= {userData['program_studi']}
+                                                        value= {data.label}
                                                         id={data.id}  
                                                         name='program_studi' 
                                                         className='border mr-[10px] border-[#B0B1B0] rounded-2xl p-2' 
@@ -84,7 +84,6 @@ export default function FirstStep() {
                                                     type="radio" 
                                                     id="lainnya"
                                                     onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
-                                                    value= {userData['program_studi']}
                                                     name='program_studi' 
                                                     className='relative z-50 mr-[10px]' />
                                                 Lainnya</label>
@@ -128,7 +127,7 @@ export default function FirstStep() {
                                                         id={data.id}  
                                                         required
                                                         onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
-                                                        value= {userData['universitas']}
+                                                        value= {data.label}
                                                         name='universitas' 
                                                         className='border text-[13px] mr-[10px] border-[#B0B1B0] rounded-2xl p-2' />
                                                     {data.label}</label>
@@ -145,7 +144,6 @@ export default function FirstStep() {
                                                         type="radio" 
                                                         id="lainnya" 
                                                         onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
-                                                        value= {userData['universitas']}
                                                         name='universitas' 
                                                         className='relative mr-[10px] z-50' />
                                                     Lainnya</label>
@@ -156,7 +154,6 @@ export default function FirstStep() {
                                         type="text" 
                                         name="universitas" 
                                         onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
-                                        value= {userData['universitas']}
                                         id="lainnya" 
                                         className='text-[13px] -ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 mt-[20px] border z-10' placeholder='Masukkan universitas'/>
                                 </div>
@@ -172,8 +169,8 @@ export default function FirstStep() {
                                                 <input 
                                                     type="radio" 
                                                     id={data.id}
-                                                    onChange={(e) => setUserData({...userData, "sosmed" : e.currentTarget.value})} 
-                                                    value= {userData['sosmed']}
+                                                    onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
+                                                    value= {data.label}
                                                     required  
                                                     name='sosmed' 
                                                     className='border text-[13px] mr-[10px] border-[#B0B1B0] rounded-2xl p-2' />
@@ -190,7 +187,6 @@ export default function FirstStep() {
                                                     type="radio" 
                                                     id="lainnya" 
                                                     onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
-                                                    value= {userData['sosmed']}
                                                     name='sosmed' 
                                                     className='relative z-50 mr-[10px]' />
                                                 Lainnya</label>
@@ -201,7 +197,6 @@ export default function FirstStep() {
                                     type="text" 
                                     name="sosmed" 
                                     onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
-                                    value= {userData['sosmed']}
                                     id="lainnya" 
                                     className='-ml-[50px] mr-[20px] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan sumber lain'/>

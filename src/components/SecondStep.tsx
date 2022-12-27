@@ -31,9 +31,9 @@ export default function SecondStep() {
                                                             <hr className='mx-[30px] border-[#B1C4F0]'/>
                                                             <div className='mx-[30px] mt-[30px]'>
                                                             {
-                                                                item.benefit.map((sub:any) => {
+                                                                item.benefit.map((sub:any, index) => {
                                                                     return(
-                                                                        <div className='flex flex-col text-[#494949] text-[14px]'>
+                                                                        <div key={index} className='flex flex-col text-[#494949] text-[14px]'>
                                                                             <div className='flex flex-row font-Cairo text-left mb-[10px]'>
                                                                                 <span className='text-[#5885E9] mb-[10px] text-[12px]'>{sub.icon}</span>
                                                                                 <h1 className='ml-[10px] -mt-[5px]'>{sub.text}</h1>
