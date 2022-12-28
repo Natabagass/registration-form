@@ -20,11 +20,11 @@ export default function FifthStep() {
                             rating.map((data,index) => {
                                 return(
                                     <div key={index} className="mt-[30px] mx-[20px]">
-                                        <i className='text-[50px] mb-[20px] text-[#A7ABB8] justify-center flex'>{data.icon}</i>
-                                        <label htmlFor="rating" className='flex text-center font-Cairo text-[11px] flex-col'>
-                                            <input className='hidden flex-row' type="radio" name="rating" id="rating" />
+                                        <div className='flex text-center font-Cairo text-[11px] flex-col'>
+                                            <input id={data.id} checked className='flex-row peer hidden' type="radio" name="rating" />
+                                            <label htmlFor={data.id} className='text-[50px] peer-checked:text-[#FFAE5F] hover:text-[#4D74CC]  mb-[20px] text-[#A7ABB8] justify-center flex'>{data.icon}</label>
                                             {data.label}
-                                        </label>
+                                        </div>
                                     </div>
                                     )
                             })

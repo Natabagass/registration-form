@@ -25,22 +25,27 @@ export const studi = [
 
 export const rating = [
     {
+        id: 'sulitBanget',
         label: 'Sulit Banget',
         icon: <FaRegTired/>
     },
     {
+        id: 'agakBanget',
         label: 'Agak Sulit',
         icon: <FaRegSadTear/>
     },
     {
+        id: 'lumayan',
         label: 'Lumayan',
         icon: <FaRegMeh/>
     },
     {
+        id: 'mudah',
         label: 'Mudah',
         icon: <FaRegSmileBeam/>
     },
     {
+        id: 'mudahBanget',
         label: 'Mudah Banget',
         icon: <FaRegGrinHearts/>
     }

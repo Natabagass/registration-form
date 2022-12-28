@@ -20,21 +20,20 @@ export default function SecondStep() {
                                 {
                                     kelas.map((item, index) => {
                                         return(
-                                            <div className='border hover:border-[#4D74CC]  border-[#A7ABB8] mx-[30px] -ml-[2px] rounded-xl text-center mt-[20px]' key={index}>
-                                                <div className=''>
-                                                    <label htmlFor={item.id}>
+                                            <div className='border hover:border-[#4D74CC] border-[#A7ABB8] mx-[30px] -ml-[2px] rounded-xl text-center mt-[20px]' key={index}>
                                                         <input 
                                                             type="radio" 
                                                             name='metode' 
                                                             id={item.id} 
-                                                            className='checked:bg-[#5885E9] 
-                                                            checked:text-white' 
+                                                            className='peer' 
                                                             value={item.title} />
-                                                        <div className=''>
-                                                            <span className='text-[#5885E9] rounded-full my-[50px] flex mx-auto w-fit hover:bg-[#5885E9] hover:text-white p-5 text-[20px]  bg-[#F5F7FF]'>{item.icon}</span>
-                                                            <h1 className='font-Cairo font-bold text-[19px] mb-[20px]'>{item.title}</h1>
-                                                            <h3 className='text-[14px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>{item.desc}</h3>
-                                                            <hr className='mx-[30px] border-[#B1C4F0]'/>
+                                                        <label htmlFor={item.id} className=" peer-checked:text-white peer-checked:border-[#5885E9]">
+                                                            <div>
+                                                                <div className='text-[#5885E9] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px]  bg-[#F5F7FF]'>{item.icon}</div>
+                                                                <div className='font-Cairo font-bold text-[19px] mb-[20px]'>{item.title}</div>
+                                                                <div className='text-[14px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>{item.desc}</div>
+                                                                <hr className='mx-[30px] border-[#B1C4F0]'/>
+                                                            </div>
                                                             <div className='mx-[30px] mt-[30px]'>
                                                             {
                                                                 item.benefit.map((sub:any, index) => {
@@ -49,9 +48,7 @@ export default function SecondStep() {
                                                                 })
                                                             }
                                                         </div>
-                                                        </div>
                                                     </label>
-                                                </div>
                                             </div>
                                         )
                                     })

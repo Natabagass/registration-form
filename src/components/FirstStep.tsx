@@ -59,43 +59,42 @@ export default function FirstStep() {
                                 {
                                     studi.map((data, index)=> {
                                         return(
-                                            <div key={index} className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[20px]'>
-                                                <label htmlFor={data.id} className="ml-3 mr-[10px] text-[13px] text-center">
-                                                    <input 
-                                                        type="radio" 
-                                                        onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
-                                                        value= {data.label}
-                                                        id={data.id}  
-                                                        name='program_studi' 
-                                                        className='border mr-[10px] border-[#B0B1B0] rounded-2xl p-2' 
-                                                        required
-                                                        />
+                                            <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
+                                                <input 
+                                                    type="radio" 
+                                                    onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
+                                                    value= {data.label}
+                                                    id={data.id}  
+                                                    name='program_studi' 
+                                                    className='peer absolute mt-[7px] ml-[20px] border-[#B0B1B0]' 
+                                                    required
+                                                    />
+                                                <label htmlFor={data.id} className="ml-3 pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
                                                     {data.label}</label>
                                             </div>
                                         )
                                     })
                                 }
                                 
-                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[20px] z-50 bg-white'>
+                                <div className='p-2 mt-[19px] z-50 '>
                                     <div className="relative z-1000">
                                         <div className="other z-1000">
-                                            <label htmlFor="lainnya" className="ml-3 mr-[10px] text-[13px] text-center">
-                                                <input 
-                                                    type="radio" 
-                                                    id="lainnya"
-                                                    onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
-                                                    name='program_studi' 
-                                                    className='relative z-50 mr-[10px]' />
-                                                Lainnya</label>
+                                            <input 
+                                                type="radio" 
+                                                id="lainnya"
+                                                onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
+                                                name='program_studi' 
+                                                className='absolute peer mt-[7px] border-[#B0B1B0]' />
+                                            <label htmlFor="lainnya" className="-ml-[10px] lg: pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
                                         </div>
                                     </div>
                                 </div>
                                 <input 
                                     type="text" 
                                     name="program_studi" 
-                                    id="lainnya" 
+                                    id="textLain" 
                                     onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
-                                    className='-ml-[50px] mr-[20px] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
+                                    className='-ml-[50px] outline-none focus:ring-1 focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan program studi'/>
                             </div>
 
@@ -119,42 +118,43 @@ export default function FirstStep() {
                                 {
                                     univ.map((data, index)=> {
                                         return(
-                                            <div key={index} className='border border-[#B0B1B0] mr-[30px] rounded-2xl p-2 mt-[20px]'>
-                                                <label htmlFor={data.id} className="ml-3 mr-[10px] text-center text-[13px]">
-                                                    <input 
-                                                        type="radio" 
-                                                        id={data.id}  
-                                                        required
-                                                        onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
-                                                        value= {data.label}
-                                                        name='universitas' 
-                                                        className='border text-[13px] mr-[10px] border-[#B0B1B0] rounded-2xl p-2' />
-                                                    {data.label}</label>
+                                            <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
+                                            <input 
+                                                type="radio" 
+                                                onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
+                                                value= {data.label}
+                                                id={data.id}  
+                                                name='universitas' 
+                                                className='peer absolute mt-[7px] ml-[20px] border-[#B0B1B0]' 
+                                                required
+                                                />
+                                            <label htmlFor={data.id} className="ml-3 pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
+                                                {data.label}</label>
                                             </div>
                                         )
                                     })
                                 }
                                 <div className='flex flex-row'>
-                                    <div className='border border-[#B0B1B0] flex flex-col mr-[20px] rounded-2xl p-2 mt-[20px] z-50 bg-white'>
+                                    <div className='p-2 mt-[19px] z-50 '>
                                         <div className="relative z-1000">
                                             <div className="other z-1000">
-                                                <label htmlFor="univLain" className="ml-3 mr-[10px] text-center text-[13px]">
-                                                    <input 
-                                                        type="radio" 
-                                                        id="univLain" 
-                                                        onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
-                                                        name='universitas' 
-                                                        className='relative mr-[10px] z-50' />
-                                                    Lainnya</label>
+                                                <input 
+                                                    type="radio" 
+                                                    id="univLain"
+                                                    onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
+                                                    name='universitas' 
+                                                    className='absolute peer mt-[7px] border-[#B0B1B0]' />
+                                                <label htmlFor="univLain" className="-ml-[10px] lg: pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
                                             </div>
                                         </div>
                                     </div>
                                     <input 
-                                        type="text" 
-                                        name="universitas" 
-                                        onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
-                                        id="univLain" 
-                                        className='text-[13px] -ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 mt-[20px] border z-10' placeholder='Masukkan universitas'/>
+                                    type="text" 
+                                    name="program_studi" 
+                                    id="textUnivLain" 
+                                    onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
+                                    className='-ml-[50px] outline-none focus:ring-1 focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
+                                    placeholder='Masukkan universitas'/>
                                 </div>
                             </div>
 
@@ -163,41 +163,41 @@ export default function FirstStep() {
                                 {
                                     sosmed.map((data, index)=> {
                                         return(
-                                            <div key={index} className='border border-[#B0B1B0] mr-[5px] lg:mr-[30px] rounded-2xl p-2 mt-[20px]'>
-                                                <label htmlFor={data.id} key={index} className="ml-3 mr-[10px] text-center text-[13px]">
-                                                <input 
-                                                    type="radio" 
-                                                    id={data.id}
-                                                    onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
-                                                    value= {data.label}
-                                                    required  
-                                                    name='sosmed' 
-                                                    className='border text-[13px] mr-[10px] border-[#B0B1B0] rounded-2xl p-2' />
-                                                    {data.label}</label>
+                                            <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
+                                            <input 
+                                                type="radio" 
+                                                onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
+                                                value= {data.label}
+                                                id={data.id}  
+                                                name='sosmed' 
+                                                className='peer absolute mt-[7px] ml-[20px] border-[#B0B1B0]' 
+                                                required
+                                                />
+                                            <label htmlFor={data.id} className="ml-3 pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
+                                                {data.label}</label>
                                             </div>
                                         )
                                     })
                                 }
-                                <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[20px] z-50 bg-white'>
-                                    <div className="relative z-1000">
-                                        <div className="other z-1000">
-                                            <label htmlFor="sosmedLain" className="ml-3 mr-[10px] text-center text-[13px]">
+                                    <div className='p-2 mt-[19px] z-50 '>
+                                        <div className="relative z-1000">
+                                            <div className="other z-1000">
                                                 <input 
                                                     type="radio" 
-                                                    id="sosmedLain" 
+                                                    id="sosmedLain"
                                                     onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
                                                     name='sosmed' 
-                                                    className='relative z-50 mr-[10px]' />
-                                                Lainnya</label>
+                                                    className='absolute peer mt-[7px] border-[#B0B1B0]' />
+                                                <label htmlFor="sosmedLain" className="-ml-[10px] lg: pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </div>              
                                 <input 
                                     type="text" 
                                     name="sosmed" 
+                                    id="textSosmedLain" 
                                     onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
-                                    id="sosmedLain" 
-                                    className='-ml-[50px] mr-[20px] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
+                                    className='-ml-[50px] outline-none focus:ring-1 focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan sumber lain'/>
                             </div>
                         </div>
