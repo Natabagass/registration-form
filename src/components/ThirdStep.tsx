@@ -16,7 +16,7 @@ export default function ThirdStep() {
                 <div className='lg:mx-[100px] mx-[30px] mt-[50px] '>
                     <div className='mb-[50px]'>
                         <h1 className='text-[22px] font-medium font-Rajdhani'>Anggota Kelompok Belajar</h1>
-                        <h3 className='xl:text-[16px] vsm:text-[12px] lg:text-[14px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Pilih jumlah peserta yang akan mengikuti kegiatan pembelajaran ini. </h3>
+                        <h3 className='xl:text-[16px] text-[12px] lg:text-[14px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Pilih jumlah peserta yang akan mengikuti kegiatan pembelajaran ini. </h3>
 
                         <div>
                             <h1 className='font-bold mt-[30px] font-Cairo mb-3'>Jumlah Peserta</h1>
@@ -27,7 +27,7 @@ export default function ThirdStep() {
                                             setUserData({...userData, "counter" : item + 1});
                                             setCounterArrays(Array.from(Array(item + 1).keys()));
                                         }} 
-                                        className='border px-5 py-3 rounded-xl hover:bg-[#F5F7FF] active:bg-[#5885E9] active:text-white mr-3'>
+                                        className='border px-5 mt-[10px] py-3 rounded-xl hover:bg-[#F5F7FF] active:bg-[#5885E9] active:text-white mr-3'>
                                             {item + 1}
                                         </button>
                                     )

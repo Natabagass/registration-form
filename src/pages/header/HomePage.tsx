@@ -102,9 +102,9 @@ export default function HeaderPage() {
             <HeroSection/>
             <Stepper alternativeLabel activeStep={currentStep - 1} connector={<QontoConnector/>} className="lg:w-[600px] vsm:w-[344px] mt-[100px] mx-auto">
                 {steps.map((label) => (
-                    <Step  key={label}>
+                    <Step key={label}>
                         <StepLabel StepIconComponent={QontoStepIcon} >
-                            <div className="text-[13px] text-black font-Cairo">
+                            <div className="text-[10px] lg:text-[13px] text-black font-Cairo">
                                 {label}
                             </div></StepLabel>
                     </Step>

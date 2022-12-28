@@ -4,6 +4,34 @@ import { HiPencilAlt } from "react-icons/hi";
 import { FaRegSadTear, FaRegGrinHearts, FaRegSmileBeam, FaRegMeh, FaRegTired, FaSadTear } from "react-icons/fa"
 import React from 'react'
 
+
+export const jam = [
+    {
+        id: 'pertama',
+        label: '08.00 - 10.00',
+    },
+    {
+        id: 'kedua',
+        label: '10.00 - 12.00',
+    },
+    {
+        id: 'ketiga',
+        label: '12.00 - 16.00',
+    },
+    {
+        id: 'keempat',
+        label: '16.00 - 18.00',
+    },
+    {
+        id: 'kelima',
+        label: '19.00 - 21.00',
+    },
+    {
+        id: 'keenam',
+        label: '21.00 - 23.00',
+    }
+]
+
 export const studi = [
     {
         label: "S1 Teknik Kimia",
