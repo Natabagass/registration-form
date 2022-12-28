@@ -138,10 +138,10 @@ export default function FirstStep() {
                                     <div className='border border-[#B0B1B0] flex flex-col mr-[20px] rounded-2xl p-2 mt-[20px] z-50 bg-white'>
                                         <div className="relative z-1000">
                                             <div className="other z-1000">
-                                                <label htmlFor="lainnya" className="ml-3 mr-[10px] text-center text-[13px]">
+                                                <label htmlFor="univLain" className="ml-3 mr-[10px] text-center text-[13px]">
                                                     <input 
                                                         type="radio" 
-                                                        id="lainnya" 
+                                                        id="univLain" 
                                                         onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
                                                         name='universitas' 
                                                         className='relative mr-[10px] z-50' />
@@ -153,7 +153,7 @@ export default function FirstStep() {
                                         type="text" 
                                         name="universitas" 
                                         onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
-                                        id="lainnya" 
+                                        id="univLain" 
                                         className='text-[13px] -ml-[50px] mr-[20px] rounded-2xl p-2 pl-10 mt-[20px] border z-10' placeholder='Masukkan universitas'/>
                                 </div>
                             </div>
@@ -181,10 +181,10 @@ export default function FirstStep() {
                                 <div className='border border-[#B0B1B0] mr-[20px] rounded-2xl p-2 mt-[20px] z-50 bg-white'>
                                     <div className="relative z-1000">
                                         <div className="other z-1000">
-                                            <label htmlFor="lainnya" className="ml-3 mr-[10px] text-center text-[13px]">
+                                            <label htmlFor="sosmedLain" className="ml-3 mr-[10px] text-center text-[13px]">
                                                 <input 
                                                     type="radio" 
-                                                    id="lainnya" 
+                                                    id="sosmedLain" 
                                                     onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
                                                     name='sosmed' 
                                                     className='relative z-50 mr-[10px]' />
@@ -196,7 +196,7 @@ export default function FirstStep() {
                                     type="text" 
                                     name="sosmed" 
                                     onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
-                                    id="lainnya" 
+                                    id="sosmedLain" 
                                     className='-ml-[50px] mr-[20px] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan sumber lain'/>
                             </div>

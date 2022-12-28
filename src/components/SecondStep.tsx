@@ -22,8 +22,14 @@ export default function SecondStep() {
                                         return(
                                             <div className='border hover:border-[#4D74CC]  border-[#A7ABB8] mx-[30px] -ml-[2px] rounded-xl text-center mt-[20px]' key={index}>
                                                 <div className=''>
-                                                    <input type="radio" name='metode' id='metodePembelajaran' className='checked:bg-[#5885E9] checked:text-white' value={item.desc} />
-                                                    <label htmlFor="metodePembelajaran">
+                                                    <label htmlFor={item.id}>
+                                                        <input 
+                                                            type="radio" 
+                                                            name='metode' 
+                                                            id={item.id} 
+                                                            className='checked:bg-[#5885E9] 
+                                                            checked:text-white' 
+                                                            value={item.title} />
                                                         <div className=''>
                                                             <span className='text-[#5885E9] rounded-full my-[50px] flex mx-auto w-fit hover:bg-[#5885E9] hover:text-white p-5 text-[20px]  bg-[#F5F7FF]'>{item.icon}</span>
                                                             <h1 className='font-Cairo font-bold text-[19px] mb-[20px]'>{item.title}</h1>
@@ -62,8 +68,12 @@ export default function SecondStep() {
                                     mataKuliah.map((item, index)=> {
                                         return(
                                             <div className='border border-[#B0B1B0] w-[307px]  mr-[20px] rounded-2xl p-2 mt-[20px] flex-row flex' key={index}>
-                                                <input type="radio" id='kuliah' name="matakuliah" className='ml-[20px]' />
-                                                <label htmlFor='kuliah' className='flex ml-[20px] flex-col'>
+                                                <input 
+                                                    type="radio" 
+                                                    id={item.id} 
+                                                    name="matakuliah" 
+                                                    className='ml-[20px]' />
+                                                <label htmlFor={item.id} className='flex ml-[20px] flex-col'>
                                                     <h1 className='text-[13px] text-[#151515] font-Cairo'>{item.title}</h1>
                                                     <h3 className='text-[11px] text-[#727272]'>{item.jumlah}</h3>
                                                 </label>
@@ -94,8 +104,12 @@ export default function SecondStep() {
                                 materi.map((item, index)=> {
                                     return(
                                         <div key={index} className='border border-[#B0B1B0] w-[700px] flex-wrap mr-[5px] lg:mr-[30px] rounded-2xl p-2 mt-[20px]'>
-                                            <input type="radio"  name='materi' className='border text-[13px] border-[#B0B1B0] rounded-2xl p-2' />
-                                            <label className="ml-3 text-center text-[13px] font-Cairo">{item.title}</label>
+                                            <input 
+                                                type="radio"  
+                                                name='materi'
+                                                id={item.id} 
+                                                className='border text-[13px] border-[#B0B1B0] rounded-2xl p-2' />
+                                            <label htmlFor={item.id} className="ml-3 text-center text-[13px] font-Cairo">{item.title}</label>
                                         </div>
                                     )
                                 })

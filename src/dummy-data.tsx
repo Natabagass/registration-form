@@ -7,19 +7,19 @@ import React from 'react'
 export const studi = [
     {
         label: "S1 Teknik Kimia",
-        id: "pil1"
+        id: "s1kimia"
     },
     {
         label: "S1 Teknologi Bioproses",
-        id: "pil2"
+        id: "bioproses"
     },
     {
         label: "S2 Teknik Kimia",
-        id: "pil3"
+        id: "s2kimia"
     },
     {
         label: "S3 Teknik Kimia",
-        id: "pil4"
+        id: "s3kimia"
     },
 ]
 
@@ -49,55 +49,56 @@ export const rating = [
 export const univ = [
     {
         label: "Universitas Indonesia",
-        id: "pil1"
+        id: "ui"
     },
     {
         label: "Institut Teknologi Bandung",
-        id: "pil2"
+        id: "itb"
     },
     {
         label: "Institut Teknologi Sepuluh November",
-        id: "pil3"
+        id: "its"
     },        
     {
         label: "Universitas Sriwijaya",
-        id: "pil4"
+        id: "unsri"
     },        
     {
         label: "Universitas Muhammadiyah Surakarta",
-        id: "pil5"
+        id: "ums"
     },
 ]
 
 export const sosmed = [
     {
         label: "Instagram",
-        id: "pil1"
+        id: "ig"
     },
     {
         label: "Facebook",
-        id: "pil2"
+        id: "fb"
     },
     {
         label: "Tiktok",
-        id: "pil3"
+        id: "tt"
     },        
     {
         label: "Linkedin",
-        id: "pil4"
+        id: "linkedin"
     },        
     {
         label: "Line",
-        id: "pil5"
+        id: "line"
     },
     {
         label: "Teman atau Keluarga",
-        id: "pil6"
+        id: "teman"
     },
 ]
 
 export const kelas = [
     {
+        id: 'kelasPerkuliahan',
         icon: <BsPeopleFill/>,
         title: 'Kelas Perkuliahan',
         desc: 'Kelas perkuliahan adalah dimana tutor melakukan presentasi yang komprehensif tentang materi pelajaran yang dipilih oleh siswa. Kami merekomendasikan kelas ini untuk siswa yang ingin meninjau dan memperdalam pemahaman mereka.',
@@ -129,6 +130,7 @@ export const kelas = [
         ] 
     },
     {
+        id: 'kelasKonsultasi',
         icon: <HiPencilAlt/>,
         title: 'Kelas Konsultasi',
         desc: 'Diskusi terbuka dan kelas di mana siswa dapat bertanya atau berkonsultasi terkait materi pelajaran yang dipilih. Direkomendasikan bagi siswa yang mengerjakan tugas proyek. Para siswa juga didorong untuk memiliki pemahaman dasar dengan materi.',
@@ -160,6 +162,7 @@ export const kelas = [
         ] 
     },
     {
+        id: 'kelasPersiapanUjian',
         icon: <BsFillFileEarmarkTextFill/>,
         title: 'Kelas Persiapan Ujian',
         desc: 'Kelas ini dirancang bagi siswa untuk melakukan tinjauan singkat dan praktik terkait dengan materi pelajaran yang dipilih. Kami merekomendasikan kelas ini untuk siswa yang memiliki jadwal padat dan sudah memiliki pemahaman dasar tentang materi.',
@@ -194,122 +197,122 @@ export const kelas = [
 
 export const mataKuliah = [
     {
-        id: 1,
+        id: '1',
         title: 'Dasar-Dasar Kimia Analitik',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 2,
+        id: '2',
         title: 'Dasar-Dasar Perpindahan Massa',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 3,
+        id: '3',
         title: 'Dasar-Dasar Perpindahan Panas',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 4,
+        id: '4',
         title: 'Desain Pabrik Proses',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 5,
+        id: '5',
         title: 'Desain Peralatan Proses',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 6,
+        id: '6',
         title: 'Desain Produk dan Pengembangan',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 7,
+        id: '7',
         title: 'Ekonomi Teknik',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 8,
+        id: '8',
         title: 'Fenomena Transportasi',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 9,
+        id: '9',
         title: 'Fisika Dasar 1',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 10,
+        id: '10',
         title: 'Fisika Dasar 2',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 11,
+        id: '11',
         title: 'Kalkulus Dasar',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 12,
+        id: '12',
         title: 'Kimia Dasar',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 13,
+        id: '13',
         title: 'Kimia Fisik',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 14,
+        id: '14',
         title: 'Kimia Organik Untuk Teknik',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 15,
+        id: '15',
         title: 'Komputasi Numerik Untuk Teknik',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 16,
+        id: '16',
         title: 'Kultur Sel Untuk Teknik',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 17,
+        id: '17',
         title: 'Matematika Teknik Kimia',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 18,
+        id: '18',
         title: 'Mekanika Fluida dan Partikel',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 19,
+        id: '19',
         title: 'Neraca Massa dan Energi',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 20,
+        id: '20',
         title: 'Proses Kontrol dan Dinamika',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 21,
+        id: '21',
         title: 'Simulasi Proses Kimia',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 22,
+        id: '22',
         title: 'Statistik dan Probalitas',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 23,
+        id: '23',
         title: 'Teknik Reaksi Kimia',
         jumlah: 'Tersedia 4 materi'
     },
     {
-        id: 24,
+        id: '24',
         title: 'Termodinamika Teknik Kimia',
         jumlah: 'Tersedia 4 materi'
     }
@@ -317,19 +320,19 @@ export const mataKuliah = [
 
 export const materi = [
     {
-        id: 1,
+        id: 'materi1',
         title: 'Kultur Jaringan'
     },
     {
-        id: 2,
+        id: 'materi2',
         title: 'Kultur Sel Hewan'
     },
     {
-        id: 3,
+        id: 'materi3',
         title: 'Kontaminasi Kultur Sel'
     },
     {
-        id: 4,
+        id: 'materi4',
         title: 'Kultur Sel Bioproses'
     },
 ]

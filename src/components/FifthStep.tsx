@@ -6,7 +6,7 @@ import HeroIcons from '../assets/img/Form 5.png'
 import { FaPen } from 'react-icons/fa';
 
 export default function FifthStep() {
-    const {setStep, userData, setUserData, submitData} = useContext(multiStepContext)
+
     return (
         <>
             <div className='flex flex-col items-center mt-[50px]'>
@@ -47,8 +47,8 @@ export default function FifthStep() {
                     </div>
                 </form>
                 <div className='flex flex-col'>
-                    <button type='submit' onClick={()=> setStep(4)} className='bg-[#5885E9] font-Cairo rounded-xl mt-[30px] mb-[10px] shadow-effect px-5 text-white p-3 font-bold'>Kembali ke Beranda</button>
-                    <button type='submit' onClick={submitData} className=' font-Cairo text-[#5885E9] rounded-xl px-5 mb-[50px] underline p-3 font-bold'>Daftar Kelas Lainnya</button>
+                    <a href='' className='bg-[#5885E9] font-Cairo rounded-xl mt-[30px] mb-[10px] shadow-effect px-5 text-white p-3 font-bold'>Kembali ke Beranda</a>
+                    <a href='' className=' font-Cairo text-[#5885E9] rounded-xl px-5 mb-[50px] underline p-3 font-bold'>Daftar Kelas Lainnya</a>
                 </div>
             </div>
         </>
