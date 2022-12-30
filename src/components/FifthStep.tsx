@@ -48,8 +48,8 @@ export default function FifthStep() {
                     </div>
                 </form>
                 <div className='flex flex-col'>
-                    <a href='' className='bg-[#5885E9] font-Cairo rounded-xl mt-[30px] mb-[10px] shadow-effect px-[90px] lg:px-5 text-white p-3 font-bold'>Kembali ke Beranda</a>
-                    <a href='' className=' font-Cairo text-[#5885E9] rounded-xl text-center px-5 mb-[50px] underline p-3 font-bold'>Daftar Kelas Lainnya</a>
+                    <button onClick={() => setStep(3)} className='bg-[#5885E9] font-Cairo rounded-xl mt-[30px] mb-[10px] shadow-effect px-[90px] lg:px-5 text-white p-3 font-bold'>Kembali ke Beranda</button>
+                    <button onClick={() => setStep(3)} className=' font-Cairo text-[#5885E9] rounded-xl text-center px-5 mb-[50px] underline p-3 font-bold'>Daftar Kelas Lainnya</button>
                 </div>
             </div>
         </>

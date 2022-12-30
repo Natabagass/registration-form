@@ -4,11 +4,28 @@ import { MdEmail } from "react-icons/md";
 import { FaUser, FaSchool } from "react-icons/fa";
 import { sosmed, univ, studi } from "../dummy-data";
 import { multiStepContext } from '../pages/StepContext';
+import { Formik } from 'formik';
+import { object, mixed, number } from 'yup';
 
 export default function FirstStep() {
     const {setStep, userData, setUserData} = useContext(multiStepContext)
     return (
         <>
+        <Formik
+            validationSchema={object({
+                
+            })}
+            initialValues={{
+                email: '',
+                fullname: '',
+                phone: '',
+                program_studi: '',
+                angkatan: '',
+                universitas: '',
+                sosmed: ''
+            }}
+            onSubmit={()=> {}}
+        >
             <div className='lg:mx-[100px] mx-[20px] lg:w-[820px] xl:w-[1300px] lg:mt-[100px]'>
                 <h1 className='font-medium vsm:text-[22px] font-Rajdhani mt-[50px] lg:mt-[50px] text-[#151515] lg:text-[30px]'>Data Personal</h1>
                 <h3 className='text-[#727272] lg:leading-[26px] leading-[24px] font-Cairo text-[12px] xl:w-[1300px] lg:w-[820px] vsm:w-[344px] lg:text-[16px]'>Masukkan data diri kamu untuk memulai kelas. Satu formulir hanya bisa digunakan untuk satu Mata Kuliah (Kursus), namun teman-teman bisa memilih beberapa Sesi Pelajaran di dalam satu mata kuliah tersebut.</h3>
@@ -16,17 +33,17 @@ export default function FirstStep() {
                 <div className='mt-[30px]'>
                     <form action="">
                         <div className='flex font-Cairo flex-col flex-wrap'>
-                            <label className='font-bold text-[16px]'>Email</label>
+                            <h1 className='font-bold text-[16px]'>Email</h1>
                             <div className='mb-6 relative'>
-                                <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-                                    <MdEmail className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
-                                </div>
+                                <label className='absolute peer-active:text-[#3C64B1] inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+                                    <MdEmail className='fill-[#B0B1B0] hover:fill-[#5885E9] text-[18px] mt-[10px]'/>
+                                </label>
                                 <input 
                                     type="text" 
                                     onChange={(e) => setUserData({...userData, "email" : e.target.value})} 
                                     value= {userData['email']}
                                     name='email' 
-                                    className='border outline-none focus:ring-2  focus:text-[#3C64B1] focus:ring-[#3C64B1] w-[344px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
+                                    className='border peer outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[344px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
                                     required 
                                     placeholder='Misal: nama@gmail.com'/>
                             </div>
@@ -41,7 +58,7 @@ export default function FirstStep() {
                                     name='fullname' 
                                     onChange={(e) => setUserData({...userData, "fullname" : e.target.value})} 
                                     value= {userData['fullname']}
-                                    className='border lg:w-[500px] pl-[40px] w-[344px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
+                                    className='border lg:w-[500px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] pl-[40px] w-[344px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
                                     required  
                                     placeholder='Tulis nama lengkap'/>
                             </div>
@@ -66,7 +83,7 @@ export default function FirstStep() {
                                                     value= {data.label}
                                                     id={data.id}  
                                                     name='program_studi' 
-                                                    className='peer absolute mt-[7px] ml-[20px] border-[#B0B1B0]' 
+                                                    className='peer absolute mt-[7px] ml-[20px]' 
                                                     required
                                                     />
                                                 <label htmlFor={data.id} className="ml-3 pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
@@ -94,7 +111,7 @@ export default function FirstStep() {
                                     name="program_studi" 
                                     id="textLain" 
                                     onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
-                                    className='-ml-[50px] outline-none focus:ring-1 focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
+                                    className='-ml-[50px] outline-none focus:ring-1 placeholder:font-Cairo focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan program studi'/>
                             </div>
 
@@ -108,7 +125,7 @@ export default function FirstStep() {
                                     name='angkatan' 
                                     onChange={(e) => setUserData({...userData, "angkatan" : e.target.value})} 
                                     value= {userData['angkatan']}
-                                    className='border vsm:w-[344px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
+                                    className='border vsm:w-[344px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
                                     required  
                                     placeholder='Tahun Angkatan'/>
                             </div>
@@ -173,7 +190,7 @@ export default function FirstStep() {
                                                 className='peer absolute mt-[7px] ml-[20px] border-[#B0B1B0]' 
                                                 required
                                                 />
-                                            <label htmlFor={data.id} className="ml-3 pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
+                                            <label htmlFor={data.id} className="ml-3 pl-[30px] peer-checked:bg-[#F5F7FF] px-[30px] rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
                                                 {data.label}</label>
                                             </div>
                                         )
@@ -213,6 +230,7 @@ export default function FirstStep() {
                     </form>
                 </div>
             </div>
+            </Formik>
         </>
     )
 }
