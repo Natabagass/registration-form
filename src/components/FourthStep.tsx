@@ -161,7 +161,7 @@ export default function FourthStep() {
                                     onChange={(e) => setUserData({ ...userData, "catatanTutor": e.target.value })}
                                     value={userData['catatanTutor']}
                                     name='catatanTutor'
-                                    className='border outline-none h-[200px] flex items-start focus:ring-2  focus:ring-[#3C64B1] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
+                                    className='border outline-none h-[200px] flex items-start focus:ring-2  hover:border-[#4D74CC] focus:border-[#5885E9] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
                                     required
                                     placeholder='Tuliskan masukkanmu disini' />
                             </div>
@@ -176,7 +176,7 @@ export default function FourthStep() {
                                 onChange={(e) => setUserData({ ...userData, "kodeRef": e.target.value })}
                                 value={userData['kodeRef']}
                                 name='kodeRef'
-                                className='border outline-none focus:ring-2  focus:text-[#3C64B1] focus:ring-[#3C64B1] w-[320px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
+                                className='border outline-none hover:border-[#4D74CC] focus:border-[#5885E9] w-[320px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
                                 required
                                 placeholder='Masukkan Kode Referal' />
                         </div>
@@ -187,7 +187,7 @@ export default function FourthStep() {
                     </div>
                     <div className='flex flex-row'>
                         <button type='submit' onClick={() => setStep(3)} className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
-                        <button type='submit' onClick={() => setStep(5)} className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Berikutnya</button>
+                        <button type='submit' onClick={submitData} className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Submit</button>
                     </div>
                 </div>
             </form>

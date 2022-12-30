@@ -58,7 +58,7 @@ export default function ThirdStep() {
                                                     onChange={(e) => setUserData({ ...userData, "email": e.target.value })}
                                                     value={userData['email']}
                                                     name='email'
-                                                    className='border outline-none focus:ring-2 focus:text-[#3C64B1] focus:ring-[#3C64B1] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
+                                                    className='border outline-none hover:border-[#4D74CC] focus:border-[#5885E9] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
                                                     required
                                                     placeholder='Misal: nama@gmail.com' />
                                             </div>
@@ -73,7 +73,7 @@ export default function ThirdStep() {
                                                     name='fullname'
                                                     onChange={(e) => setUserData({ ...userData, "fullname": e.target.value })}
                                                     value={userData['fullname']}
-                                                    className='border pl-[40px] w-full text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
+                                                    className='border pl-[40px] outline-none hover:border-[#4D74CC] focus:border-[#5885E9] w-full text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
                                                     required
                                                     placeholder='Tulis nama lengkap' />
                                             </div>
@@ -83,7 +83,7 @@ export default function ThirdStep() {
                                                 {/* <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
                                         <FaUser className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
                                     </div> */}
-                                                <input type="tel" name='phone' className='border w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required placeholder='Tulis nomor handphone' />
+                                                <input type="tel" name='phone' className='border outline-none hover:border-[#4D74CC] focus:border-[#5885E9] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required placeholder='Tulis nomor handphone' />
                                             </div>
 
                                             <label className='font-bold text-[16px]'>Akun Discord</label>
@@ -96,7 +96,7 @@ export default function ThirdStep() {
                                                     onChange={(e) => setUserData({ ...userData, "discord": e.target.value })}
                                                     value={userData['discord']}
                                                     name='discord'
-                                                    className='border outline-none focus:ring-2  focus:text-[#3C64B1] focus:ring-[#3C64B1] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
+                                                    className='border outline-none hover:border-[#4D74CC] focus:border-[#5885E9] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
                                                     required
                                                     placeholder='Misal: username#1234' />
                                             </div>

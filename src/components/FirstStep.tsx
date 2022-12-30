@@ -8,7 +8,7 @@ import { Formik } from 'formik';
 import { object, mixed, number } from 'yup';
 
 export default function FirstStep() {
-    const {setStep, userData, setUserData} = useContext(multiStepContext)
+    const {setStep, userData, setUserData, nextStep} = useContext(multiStepContext)
     return (
         <>
         <Formik
@@ -221,7 +221,7 @@ export default function FirstStep() {
                         <div>
                             <button 
                                 type='submit' 
-                                onClick={() => setStep(2)} 
+                                onClick={nextStep} 
                                 className='mr-0 ml-auto block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'
                                 >
                                     Berikutnya
