@@ -35,7 +35,7 @@ export default function FirstStep() {
                         <div className='flex font-Cairo flex-col flex-wrap'>
                             <h1 className='font-bold text-[16px]'>Email</h1>
                             <div className='mb-6 relative'>
-                                <label className='absolute peer-active:text-[#3C64B1] inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+                                <label className='absolute peer-active:fill-[#3C64B1] inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
                                     <MdEmail className='fill-[#B0B1B0] hover:fill-[#5885E9] text-[18px] mt-[10px]'/>
                                 </label>
                                 <input 
@@ -43,7 +43,7 @@ export default function FirstStep() {
                                     onChange={(e) => setUserData({...userData, "email" : e.target.value})} 
                                     value= {userData['email']}
                                     name='email' 
-                                    className='border peer outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[344px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
+                                    className='border disabled:bg-[#F3F3F3] disabled:text-[#A7A7A7] disabled:border-none disabled:shadow-none peer outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[344px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
                                     required 
                                     placeholder='Misal: nama@gmail.com'/>
                             </div>
@@ -63,12 +63,12 @@ export default function FirstStep() {
                                     placeholder='Tulis nama lengkap'/>
                             </div>
 
-                            <label className='font-bold  text-[16px]'>Nomor Handphone</label>
+                            <h1 className='font-bold  text-[16px]'>Nomor Handphone</h1>
                             <div className='mb-6 relative'>
-                                {/* <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+                                <label htmlFor='phone' className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
                                     <FaUser className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
-                                </div> */}
-                                <input type="tel" name='phone' className='border w-[344px]  lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tulis nomor handphone'/>
+                                </label>
+                                <input type="tel" name='phone' id='phone' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" className='border w-[344px]  lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tulis nomor handphone'/>
                             </div>
 
                             <label className='font-bold text-[16px]'>Program Studi</label>
@@ -182,7 +182,7 @@ export default function FirstStep() {
                                         return(
                                             <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
                                             <input 
-                                                type="radio" 
+                                                type="checkbox" 
                                                 onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
                                                 value= {data.label}
                                                 id={data.id}  
@@ -200,7 +200,7 @@ export default function FirstStep() {
                                         <div className="relative z-1000">
                                             <div className="other z-1000">
                                                 <input 
-                                                    type="radio" 
+                                                    type="checkbox" 
                                                     id="sosmedLain"
                                                     onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
                                                     name='sosmed' 

@@ -129,6 +129,87 @@ export const sosmed = [
     },
 ]
 
+export const kelasKonsultasi = [
+    {
+        icon: <AiFillCheckCircle />,
+        text:'Live Tutoring di Google Meet (100 menit/sesi)'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">2 Materi</span></h1>
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Materi presentasi disediakan'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Rekaman Google Meet disediakan'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Konsultasi gratis di grup Discord'
+    }
+]
+
+export const kelasPersiapanUjian = [
+    {
+        icon: <AiFillCheckCircle />,
+        text:'Live Tutoring di Google Meet (100 menit/sesi)'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">2 Materi</span></h1>
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Materi presentasi disediakan'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Rekaman Google Meet disediakan'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Konsultasi gratis di grup Discord'
+    }
+]
+
+export const kelasPerkuliahan = [
+    {
+        icon: <AiFillCheckCircle />,
+        text:'Live Tutoring di Google Meet (100 menit/sesi)'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">1 Materi</span></h1>
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Materi presentasi disediakan'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Rekaman Google Meet disediakan'
+    },
+    {
+        icon: <AiFillCheckCircle />,
+        text: 'Konsultasi gratis di grup Discord'
+    }
+]
+
 export const kelas = [
     {
         id: 'kelasPerkuliahan',
@@ -142,7 +223,7 @@ export const kelas = [
             },
             {
                 icon: <AiFillCheckCircle />,
-                text:'1 Sesi sama dengan 1 Materi'
+                text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">1 Materi</span></h1>
             },
             {
                 icon: <AiFillCheckCircle />,
@@ -174,7 +255,7 @@ export const kelas = [
             },
             {
                 icon: <AiFillCheckCircle />,
-                text:'1 sesi sama dengan 2 Materi'
+                text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">2 Materi</span></h1>
             },
             {
                 icon: <AiFillCheckCircle />,
@@ -206,7 +287,7 @@ export const kelas = [
             },
             {
                 icon: <AiFillCheckCircle />,
-                text:'1 Sesi sama dengan 2 Materi'
+                text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">2 Materi</span></h1>
             },
             {
                 icon: <AiFillCheckCircle />,
