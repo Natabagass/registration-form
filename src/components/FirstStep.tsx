@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import {Button, TextField} from '@mui/material'
 import { MdEmail } from "react-icons/md";
 import { FaUser, FaSchool } from "react-icons/fa";
@@ -6,9 +6,11 @@ import { sosmed, univ, studi } from "../dummy-data";
 import { multiStepContext } from '../pages/StepContext';
 import { Formik } from 'formik';
 import { object, mixed, number } from 'yup';
+import { CountryCode } from '../pages/api/CountryCodes.js';
 
 export default function FirstStep() {
-    const {setStep, userData, setUserData, nextStep} = useContext(multiStepContext)
+    const {setStep, userData, setUserData, nextStep} = useContext(multiStepContext);
+
     return (
         <>
         <Formik
@@ -65,10 +67,25 @@ export default function FirstStep() {
 
                             <h1 className='font-bold  text-[16px]'>Nomor Handphone</h1>
                             <div className='mb-6 relative'>
-                                <label htmlFor='phone' className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+                                <div className="flex mt-[10px]">
+                                    <select className="border outline-none focus:border-[#5885E9] hover:border-[#5885E9] text-[13px] border-[#B0B1B0] rounded-l-2xl px-3 py-1">
+                                        {CountryCode.map((item, index) => {
+                                                return (
+                                                    <option key={index}>+{item.dial_code}</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
+                                    <input type="tel" className="border lg:w-[415px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[260px] text-[13px] border-[#B0B1B0] rounded-r-2xl p-2" placeholder="Tulis nomor handphone"></input>
+                                </div>
+
+
+
+
+                                {/* <label htmlFor='phone' className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
                                     <FaUser className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
                                 </label>
-                                <input type="tel" name='phone' id='phone' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" className='border w-[344px]  lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tulis nomor handphone'/>
+                                <input type="tel" name='phone' id='phone' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" className='border w-[344px]  lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tulis nomor handphone'/> */}
                             </div>
 
                             <label className='font-bold text-[16px]'>Program Studi</label>
@@ -233,4 +250,8 @@ export default function FirstStep() {
             </Formik>
         </>
     )
+}
+
+function componentDidMount() {
+    throw new Error('Function not implemented.');
 }
