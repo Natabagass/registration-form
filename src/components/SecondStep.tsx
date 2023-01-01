@@ -1,15 +1,15 @@
-import React, { useContext } from 'react'
-import icon2 from "../assets/img/Vector.png"
-import { SvgIcon } from '@mui/material';
+import React, { useContext, useState } from 'react'
 import { kelas, kelasPerkuliahan, mataKuliah, materi } from "../dummy-data";
 import { multiStepContext } from '../pages/StepContext';
-import {BsPeopleFill, BsFillFileEarmarkTextFill} from 'react-icons/bs'
-import {HiPencilAlt} from 'react-icons/hi'
+import { BsPeopleFill, BsFillFileEarmarkTextFill } from 'react-icons/bs'
+import { HiPencilAlt } from 'react-icons/hi'
+import { GiBookCover } from 'react-icons/gi'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../pages/_app";
 import { Pagination } from "swiper";
+import { Dropdown } from "flowbite-react";
 
 export default function SecondStep() {
     const pagination = {
@@ -18,6 +18,11 @@ export default function SecondStep() {
             return '<span class="' + className + '">' + (index + 1) + "</span>";
         },
     };
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage, setPostPerPage] = useState(1);
+    const lastPostIndex = currentPage * postPerPage;
+    const firstPostIndex = lastPostIndex - postPerPage;
+
     const { setStep, userData, setUserData } = useContext(multiStepContext)
     return (
         <>
@@ -77,12 +82,12 @@ export default function SecondStep() {
                                 <input
                                     type="radio"
                                     name='metode'
-                                    id='kelasPerkuliahan'
+                                    id='kelasPerkul'
                                     className='peer hidden'
                                     value='Kelas Perkuliahan' />
-                                <label htmlFor='kelasPerkuliahan' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
+                                <label htmlFor='kelasPerkul' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
                                     <span className='text-[#5885E9] hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#F5F7FF]'>
-                                        <BsPeopleFill/></span>
+                                        <BsPeopleFill /></span>
                                     <h1 className='font-Cairo font-bold text-[19px] mb-[20px]'>Kelas Perkuliahan</h1>
                                     <h1 className='text-[14px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>Kelas perkuliahan adalah dimana tutor melakukan presentasi yang komprehensif tentang materi pelajaran yang dipilih oleh siswa. Kami merekomendasikan kelas ini untuk siswa yang ingin meninjau dan memperdalam pemahaman mereka.</h1>
                                     <hr className='mx-[30px] border-[#B1C4F0]' />
@@ -105,16 +110,16 @@ export default function SecondStep() {
                         </SwiperSlide>
 
                         <SwiperSlide>
-                        <div className='flex text-center mt-[20px]'>
+                            <div className='flex text-center mt-[20px]'>
                                 <input
                                     type="radio"
                                     name='metode'
-                                    id='kelasKonsultasi'
+                                    id='kelasKonsul'
                                     className='peer hidden'
                                     value='Kelas Konsultasi' />
-                                <label htmlFor='kelasKonsultasi' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
+                                <label htmlFor='kelasKonsul' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
                                     <span className='text-[#5885E9] hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#F5F7FF]'>
-                                        <HiPencilAlt/></span>
+                                        <HiPencilAlt /></span>
                                     <h1 className='font-Cairo font-bold text-[19px] mb-[20px]'>Kelas Konsultasi</h1>
                                     <h1 className='text-[14px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>Diskusi terbuka dan kelas di mana siswa dapat bertanya atau berkonsultasi terkait materi pelajaran yang dipilih. Direkomendasikan bagi siswa yang mengerjakan tugas proyek. Para siswa juga didorong untuk memiliki pemahaman dasar dengan materi.</h1>
                                     <hr className='mx-[30px] border-[#B1C4F0]' />
@@ -137,16 +142,16 @@ export default function SecondStep() {
                         </SwiperSlide>
 
                         <SwiperSlide>
-                        <div className='flex text-center mt-[20px]'>
+                            <div className='flex text-center mt-[20px]'>
                                 <input
                                     type="radio"
                                     name='metode'
-                                    id='kelasPersiapanUjian'
+                                    id='kelasPerUjian'
                                     className='peer hidden'
                                     value='Kelas Persiapan Ujian' />
-                                <label htmlFor='kelasPersiapanUjian' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
+                                <label htmlFor='kelasPerUjian' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
                                     <span className='text-[#5885E9] hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#F5F7FF]'>
-                                        <BsFillFileEarmarkTextFill/></span>
+                                        <BsFillFileEarmarkTextFill /></span>
                                     <h1 className='font-Cairo font-bold text-[19px] mb-[20px]'>Kelas Persiapan Ujian</h1>
                                     <h1 className='text-[14px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>Kelas ini dirancang bagi siswa untuk melakukan tinjauan singkat dan praktik terkait dengan materi pelajaran yang dipilih. Kami merekomendasikan kelas ini untuk siswa yang memiliki jadwal padat dan sudah memiliki pemahaman dasar tentang materi.</h1>
                                     <hr className='mx-[30px] border-[#B1C4F0]' />
@@ -169,7 +174,6 @@ export default function SecondStep() {
                         </SwiperSlide>
                     </Swiper>
 
-
                     <div>
                         <h1 className='font-bold mt-[30px] font-Cairo'>Mata Kuliah</h1>
                         <div>
@@ -177,7 +181,7 @@ export default function SecondStep() {
                                 {
                                     mataKuliah.map((item, index) => {
                                         return (
-                                            <div className='-ml-[20px] mr-[30px] mt-[20px] flex-row flex' key={index}>
+                                            <div className='-ml-[20px] hidden lg:flex mr-[30px] mt-[20px] flex-row' key={index}>
                                                 <input
                                                     type="radio"
                                                     id={item.id}
@@ -211,10 +215,47 @@ export default function SecondStep() {
                                     name="matakuliah"
                                     id="matkulLain"
                                     onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
-                                    className='-ml-[50px] placeholder:font-Cairo outline-none focus:ring-1 hover:border-[#5885E9] focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10'
+                                    className='-ml-[50px] placeholder:font-Cairo outline-none focus:ring-1 hover:border-[#5885E9] focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[22px] border z-10'
                                     placeholder='Masukkan mata kuliah' />
                             </div>
                         </div>
+
+                        <div className='mb-6 relative dropdown mt-[50px]'>
+                            <label htmlFor='matakuliah' tabIndex={0} className='flex flex-col'>
+                                <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+                                    <GiBookCover className='text-[#B0B1B0] text-[18px] mt-[10px]' />
+                                </div>
+                                <div tabIndex={0} className="dropdown-content overflow-y-scroll flex flex-row h-[200px] menu p-2 mt-[50px] shadow bg-base-100 rounded-box w-[350px]">
+                                    {
+                                        mataKuliah.map((item, index) => {
+                                            return (
+                                                <div className='flex flex-row w-[300px]' key={index}>
+                                                    <input
+                                                        type="radio"
+                                                        name='matakuliah'
+                                                        value={item.title}
+                                                        id={item.id2}
+                                                        className="hidden peer"
+                                                        onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                                    />
+                                                    <label htmlFor={item.id2} className="my-[10px] font-Cairo text-[14px] py-[10px] px-[10px] rounded-xl w-full peer-checked:bg-[#F5F7FF]">{item.title}</label>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </label>
+                            <input
+                                type="text"
+                                name='matakuliah'
+                                value={userData['matakuliah']}
+                                onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                id='matakuliah'
+                                className='border w-[344px]  lg:w-[500px] pl-[40px] text-[13px] mt-[10px] font-Cairo border-[#B0B1B0] rounded-2xl p-2'
+                                required
+                                placeholder='Pilih Mata Kuliah' />
+                        </div>
+
                     </div>
 
                     <div>
@@ -243,6 +284,26 @@ export default function SecondStep() {
                                 })
                             }
                         </div>
+                        <div className='p-2 mt-[19px] z-50 '>
+                                    <div className="relative z-1000">
+                                        <div className="other z-1000">
+                                            <input
+                                                type="radio"
+                                                id="matkulLainMobile"
+                                                onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                                name='matakuliah'
+                                                className='absolute peer mt-[7px] border-[#B0B1B0]' />
+                                            <label htmlFor="matkulLainMobile" className="-ml-[10px] font-Cairo lg: pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input
+                                    type="text"
+                                    name="matakuliah"
+                                    id="matkulLainMobile"
+                                    onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                    className='-ml-[50px] placeholder:font-Cairo outline-none focus:ring-1 hover:border-[#5885E9] focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[22px] border z-10'
+                                    placeholder='Masukkan mata kuliah' />
                     </div>
                     <div className='flex flex-row'>
                         <button type='submit' onClick={() => setStep(1)} className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
@@ -253,3 +314,4 @@ export default function SecondStep() {
         </>
     )
 }
+

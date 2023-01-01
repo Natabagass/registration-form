@@ -20,7 +20,6 @@ export default function FourthStep() {
     return (
         <>
             <form>
-
                 <div className='lg:mx-[100px] mx-[30px] mt-[50px]'>
                     <div className='flex flex-col'>
                         <h1 className='font-Rajdhani font-medium lg:text-[28px] xl:text-[28px] text-[22px]'>Pilih Sesi</h1>

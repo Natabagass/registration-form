@@ -1,7 +1,6 @@
 import HeroSection from "../../components/Hero"
 import FirstStep from "../../components/FirstStep"
 import SecondStep from "../../components/SecondStep"
-import ProgressBar from "../../components/MultiStepProgress"
 import {Container, Paper, styled} from '@mui/material'
 import {Stepper, StepLabel, Step} from '@mui/material'
 import Check from '@mui/icons-material/Check';
