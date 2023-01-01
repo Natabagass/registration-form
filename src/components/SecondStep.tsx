@@ -3,6 +3,7 @@ import { kelas, kelasPerkuliahan, mataKuliah, materi } from "../dummy-data";
 import { multiStepContext } from '../pages/StepContext';
 import { BsPeopleFill, BsFillFileEarmarkTextFill } from 'react-icons/bs'
 import { HiPencilAlt } from 'react-icons/hi'
+import {TiArrowSortedDown} from 'react-icons/ti'
 import { GiBookCover } from 'react-icons/gi'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -18,11 +19,6 @@ export default function SecondStep() {
             return '<span class="' + className + '">' + (index + 1) + "</span>";
         },
     };
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postPerPage, setPostPerPage] = useState(1);
-    const lastPostIndex = currentPage * postPerPage;
-    const firstPostIndex = lastPostIndex - postPerPage;
-
     const { setStep, userData, setUserData } = useContext(multiStepContext)
     return (
         <>
@@ -177,11 +173,11 @@ export default function SecondStep() {
                     <div>
                         <h1 className='font-bold mt-[30px] font-Cairo'>Mata Kuliah</h1>
                         <div>
-                            <div className='flex flex-row flex-wrap'>
+                            <div className='lg:flex hidden flex-row flex-wrap'>
                                 {
                                     mataKuliah.map((item, index) => {
                                         return (
-                                            <div className='-ml-[20px] hidden lg:flex mr-[30px] mt-[20px] flex-row' key={index}>
+                                            <div className='-ml-[20px] flex mr-[30px] mt-[20px] flex-row' key={index}>
                                                 <input
                                                     type="radio"
                                                     id={item.id}
@@ -219,43 +215,67 @@ export default function SecondStep() {
                                     placeholder='Masukkan mata kuliah' />
                             </div>
                         </div>
+                    </div>
 
-                        <div className='mb-6 relative dropdown mt-[50px]'>
-                            <label htmlFor='matakuliah' tabIndex={0} className='flex flex-col'>
-                                <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-                                    <GiBookCover className='text-[#B0B1B0] text-[18px] mt-[10px]' />
+                    <div className='mb-6 relative z-50 lg:hidden dropdown mt-[20px]'>
+                        <label htmlFor='matakuliah' tabIndex={0} className='flex flex-col'>
+                            <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
+                                <TiArrowSortedDown className='text-[#B0B1B0] text-[18px] mt-[10px]' />
+                            </div>
+                            <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+                                <GiBookCover className='text-[#B0B1B0] text-[18px] mt-[10px]' />
+                            </div>
+                            <div tabIndex={0} className="dropdown-content overflow-y-scroll flex flex-row h-[200px] menu p-2 mt-[50px] shadow bg-base-100 rounded-box w-[350px]">
+                                {
+                                    mataKuliah.map((item, index) => {
+                                        return (
+                                            <div className='flex flex-row w-[300px]' key={index}>
+                                                <input
+                                                    type="radio"
+                                                    name='matakuliah'
+                                                    value={item.title}
+                                                    id={item.id2}
+                                                    className="hidden peer"
+                                                    onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                                />
+                                                <label htmlFor={item.id2} className="my-[10px] font-Cairo text-[14px] py-[10px] px-[10px] rounded-xl w-full peer-checked:bg-[#F5F7FF]">{item.title}</label>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </label>
+                        <input
+                            type="text"
+                            name='matakuliah'
+                            value={userData['matakuliah']}
+                            onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                            id='matakuliah'
+                            className='border w-[344px]  lg:w-[500px] pl-[40px] text-[13px] mt-[10px] font-Cairo border-[#B0B1B0] rounded-2xl p-2'
+                            required
+                            placeholder='Pilih Mata Kuliah' />
+                    </div>
+                    <div className='flex -mt-[20px] lg:hidden flex-row'>
+                        <div className='p-2 mt-[19px] z-40'>
+                            <div className="relative z-1000">
+                                <div className="other z-1000">
+                                    <input
+                                        type="radio"
+                                        id="matkulLainMobile"
+                                        onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                        name='matakuliah'
+                                        className='absolute peer mt-[7px] border-[#B0B1B0]' />
+                                    <label htmlFor="matkulLainMobile" className="-ml-[10px] font-Cairo pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
                                 </div>
-                                <div tabIndex={0} className="dropdown-content overflow-y-scroll flex flex-row h-[200px] menu p-2 mt-[50px] shadow bg-base-100 rounded-box w-[350px]">
-                                    {
-                                        mataKuliah.map((item, index) => {
-                                            return (
-                                                <div className='flex flex-row w-[300px]' key={index}>
-                                                    <input
-                                                        type="radio"
-                                                        name='matakuliah'
-                                                        value={item.title}
-                                                        id={item.id2}
-                                                        className="hidden peer"
-                                                        onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
-                                                    />
-                                                    <label htmlFor={item.id2} className="my-[10px] font-Cairo text-[14px] py-[10px] px-[10px] rounded-xl w-full peer-checked:bg-[#F5F7FF]">{item.title}</label>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            </label>
-                            <input
-                                type="text"
-                                name='matakuliah'
-                                value={userData['matakuliah']}
-                                onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
-                                id='matakuliah'
-                                className='border w-[344px]  lg:w-[500px] pl-[40px] text-[13px] mt-[10px] font-Cairo border-[#B0B1B0] rounded-2xl p-2'
-                                required
-                                placeholder='Pilih Mata Kuliah' />
+                            </div>
                         </div>
-
+                        <input
+                            type="text"
+                            name="matakuliah"
+                            id="matkulLainMobile"
+                            onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                            className='-ml-[50px] placeholder:font-Cairo outline-none focus:ring-1 hover:border-[#5885E9] focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[22px] border z-10'
+                            placeholder='Masukkan mata kuliah' />
                     </div>
 
                     <div>
@@ -270,10 +290,10 @@ export default function SecondStep() {
                                         <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
                                             <input
                                                 type="checkbox"
-                                                onChange={(e) => setUserData({ ...userData, "sosmed": e.target.value })}
+                                                onChange={(e) => setUserData({ ...userData, "materi": e.target.value })}
                                                 value={item.title}
                                                 id={item.id}
-                                                name='sosmed'
+                                                name='materi'
                                                 className='peer absolute mt-[12px] ml-[20px] border-[#B0B1B0]'
                                                 required
                                             />
@@ -284,26 +304,6 @@ export default function SecondStep() {
                                 })
                             }
                         </div>
-                        <div className='p-2 mt-[19px] z-50 '>
-                                    <div className="relative z-1000">
-                                        <div className="other z-1000">
-                                            <input
-                                                type="radio"
-                                                id="matkulLainMobile"
-                                                onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
-                                                name='matakuliah'
-                                                className='absolute peer mt-[7px] border-[#B0B1B0]' />
-                                            <label htmlFor="matkulLainMobile" className="-ml-[10px] font-Cairo lg: pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <input
-                                    type="text"
-                                    name="matakuliah"
-                                    id="matkulLainMobile"
-                                    onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
-                                    className='-ml-[50px] placeholder:font-Cairo outline-none focus:ring-1 hover:border-[#5885E9] focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[22px] border z-10'
-                                    placeholder='Masukkan mata kuliah' />
                     </div>
                     <div className='flex flex-row'>
                         <button type='submit' onClick={() => setStep(1)} className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
