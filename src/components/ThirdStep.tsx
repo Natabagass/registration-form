@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import { multiStepContext } from '../pages/StepContext';
 import { MdEmail } from "react-icons/md";
 import { FaUser, FaDiscord } from "react-icons/fa";
+import { CountryCode } from '../pages/api/CountryCodes';
 
 export default function ThirdStep() {
-    const {setStep, userData, setUserData} = useContext(multiStepContext)
+    const { setStep, userData, setUserData } = useContext(multiStepContext)
     const counter = 10;
     const counterArray = Array.from(Array(counter).keys());
     const choosenCounter = userData.counter;
@@ -24,10 +25,10 @@ export default function ThirdStep() {
                                 {counterArray.map((item, index) => {
                                     return (
                                         <button key={index} onClick={() => {
-                                            setUserData({...userData, "counter" : item + 1});
+                                            setUserData({ ...userData, "counter": item + 1 });
                                             setCounterArrays(Array.from(Array(item + 1).keys()));
-                                        }} 
-                                        className='border px-5 mt-[10px] py-3 rounded-xl hover:bg-[#F5F7FF] active:bg-[#5885E9] active:text-white mr-3'>
+                                        }}
+                                            className='border px-5 mt-[10px] py-3 rounded-xl hover:bg-[#F5F7FF] active:bg-[#5885E9] active:text-white mr-3'>
                                             {item + 1}
                                         </button>
                                     )
@@ -40,7 +41,7 @@ export default function ThirdStep() {
                     <div>
                         <h1 className='text-[22px] font-medium font-Rajdhani'>Data Anggota Kelompok</h1>
                         <h3 className='xl:text-[16px] vsm:text-[12px] lg:text-[14px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Masukkan data diri teman-teman anggota kelompok yang akan mengikuti kegiatan pembelajaran ini. Perhatian! Akun Discord digunakan untuk mendapatkan gratis 7 hari konsultasi setelah sesi kelas. Jika tidak mengisi, maka kamu tidak memenuhi syarat untuk mendapatkan konsultasi kelas dan komunikasi dengan Tutor akan menggunakan Google Chat. </h3>
-                    
+
                         <div className='grid grid-cols-12'>
                             {choosenCounter > 0 && choosenCounter <= 10 ? (
                                 counterArrays.map((item, index) => {
@@ -80,10 +81,17 @@ export default function ThirdStep() {
 
                                             <label className='font-bold  text-[16px]'>Nomor Handphone</label>
                                             <div className='mb-6 relative'>
-                                                {/* <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-                                        <FaUser className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
-                                    </div> */}
-                                                <input type="tel" name='phone' className='border outline-none hover:border-[#4D74CC] focus:border-[#5885E9] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required placeholder='Tulis nomor handphone' />
+                                                <div className="flex mt-[10px]">
+                                                    <select className="border outline-none bg-[#F5F8FF] text-[#5885E9] focus:border-[#5885E9] hover:border-[#5885E9] text-[13px] border-[#B0B1B0] rounded-l-2xl px-3 py-1">
+                                                        {CountryCode.map((item, index) => {
+                                                            return (
+                                                                <option key={index}>+{item.dial_code}</option>
+                                                            )
+                                                        })
+                                                        }
+                                                    </select>
+                                                    <input type="tel" className="border lg:w-[415px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[260px] text-[13px] border-[#B0B1B0] rounded-r-2xl p-2" placeholder="Tulis nomor handphone"></input>
+                                                </div>
                                             </div>
 
                                             <label className='font-bold text-[16px]'>Akun Discord</label>
@@ -106,11 +114,11 @@ export default function ThirdStep() {
                                 : null}
                         </div>
                     </div>
-                    
-                    
+
+
                     <div className='flex flex-row'>
-                        <button type='submit' onClick={()=>setStep(2)} className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
-                        <button type='submit' onClick={()=>setStep(4)} className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Berikutnya</button>
+                        <button type='submit' onClick={() => setStep(2)} className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
+                        <button type='submit' onClick={() => setStep(4)} className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Berikutnya</button>
                     </div>
                 </div>
             </form>

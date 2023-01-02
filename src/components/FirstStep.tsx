@@ -13,21 +13,6 @@ export default function FirstStep() {
 
     return (
         <>
-        <Formik
-            validationSchema={object({
-                
-            })}
-            initialValues={{
-                email: '',
-                fullname: '',
-                phone: '',
-                program_studi: '',
-                angkatan: '',
-                universitas: '',
-                sosmed: ''
-            }}
-            onSubmit={()=> {}}
-        >
             <div className='lg:mx-[100px] mx-[20px] lg:w-[820px] xl:w-[1300px] lg:mt-[100px]'>
                 <h1 className='font-medium vsm:text-[22px] font-Rajdhani mt-[50px] lg:mt-[50px] text-[#151515] lg:text-[30px]'>Data Personal</h1>
                 <h3 className='text-[#727272] lg:leading-[26px] leading-[24px] font-Cairo text-[12px] xl:w-[1300px] lg:w-[820px] vsm:w-[344px] lg:text-[16px]'>Masukkan data diri kamu untuk memulai kelas. Satu formulir hanya bisa digunakan untuk satu Mata Kuliah (Kursus), namun teman-teman bisa memilih beberapa Sesi Pelajaran di dalam satu mata kuliah tersebut.</h3>
@@ -68,7 +53,7 @@ export default function FirstStep() {
                             <h1 className='font-bold  text-[16px]'>Nomor Handphone</h1>
                             <div className='mb-6 relative'>
                                 <div className="flex mt-[10px]">
-                                    <select className="border outline-none focus:border-[#5885E9] hover:border-[#5885E9] text-[13px] border-[#B0B1B0] rounded-l-2xl px-3 py-1">
+                                    <select className="border outline-none bg-[#F5F8FF] text-[#5885E9] focus:border-[#5885E9] hover:border-[#5885E9] text-[13px] border-[#B0B1B0] rounded-l-2xl px-3 py-1">
                                         {CountryCode.map((item, index) => {
                                                 return (
                                                     <option key={index}>+{item.dial_code}</option>
@@ -78,14 +63,6 @@ export default function FirstStep() {
                                     </select>
                                     <input type="tel" className="border lg:w-[415px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[260px] text-[13px] border-[#B0B1B0] rounded-r-2xl p-2" placeholder="Tulis nomor handphone"></input>
                                 </div>
-
-
-
-
-                                {/* <label htmlFor='phone' className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-                                    <FaUser className='text-[#B0B1B0] text-[18px] mt-[10px]'/>
-                                </label>
-                                <input type="tel" name='phone' id='phone' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" className='border w-[344px]  lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' required  placeholder='Tulis nomor handphone'/> */}
                             </div>
 
                             <label className='font-bold text-[16px]'>Program Studi</label>
@@ -247,7 +224,6 @@ export default function FirstStep() {
                     </form>
                 </div>
             </div>
-            </Formik>
         </>
     )
 }

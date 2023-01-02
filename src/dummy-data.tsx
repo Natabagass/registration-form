@@ -210,6 +210,106 @@ export const kelasPerkuliahan = [
     }
 ]
 
+export const itemKelas = [
+    {
+        id2: 'kelasPerkul',
+        icon: <BsPeopleFill/>,
+        title: 'Kelas Perkuliahan',
+        desc: 'Kelas perkuliahan adalah dimana tutor melakukan presentasi yang komprehensif tentang materi pelajaran yang dipilih oleh siswa. Kami merekomendasikan kelas ini untuk siswa yang ingin meninjau dan memperdalam pemahaman mereka.',
+        benefit:[
+            {
+                icon: <AiFillCheckCircle />,
+                text:'Live Tutoring di Google Meet (100 menit/sesi)'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">1 Materi</span></h1>
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Materi presentasi disediakan'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Rekaman Google Meet disediakan'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Konsultasi gratis di grup Discord'
+            }
+        ] 
+    },
+    {     
+        id2: 'kelasKonsul',
+        icon: <HiPencilAlt/>,
+        title: 'Kelas Konsultasi',
+        desc: 'Diskusi terbuka dan kelas di mana siswa dapat bertanya atau berkonsultasi terkait materi pelajaran yang dipilih. Direkomendasikan bagi siswa yang mengerjakan tugas proyek. Para siswa juga didorong untuk memiliki pemahaman dasar dengan materi.',
+        benefit:[
+            {
+                icon: <AiFillCheckCircle />,
+                text:'Live Tutoring di Google Meet (100 menit/sesi)'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">2 Materi</span></h1>
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Materi presentasi disediakan'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Rekaman Google Meet disediakan'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Konsultasi gratis di grup Discord'
+            }
+        ] 
+    },
+    {
+    
+        id2: 'kelasPerUjian',
+        icon: <BsFillFileEarmarkTextFill/>,
+        title: 'Kelas Persiapan Ujian',
+        desc: 'Kelas ini dirancang bagi siswa untuk melakukan tinjauan singkat dan praktik terkait dengan materi pelajaran yang dipilih. Kami merekomendasikan kelas ini untuk siswa yang memiliki jadwal padat dan sudah memiliki pemahaman dasar tentang materi.',
+        benefit:[
+            {
+                icon: <AiFillCheckCircle />,
+                text:'Live Tutoring di Google Meet (100 menit/sesi)'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text:<h1><span className="font-bold">1 Sesi </span>sama dengan <span className="font-bold">2 Materi</span></h1>
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text:'Materi yang dipilih harus mengikuti Panduan Kurikulum'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Materi presentasi disediakan'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Rekaman Google Meet disediakan'
+            },
+            {
+                icon: <AiFillCheckCircle />,
+                text: 'Konsultasi gratis di grup Discord'
+            }
+        ] 
+    }
+]
+
 export const kelas = [
     {
         id: 'kelasPerkuliahan',
