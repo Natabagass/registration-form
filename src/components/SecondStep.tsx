@@ -2,63 +2,35 @@ import React, { useContext, useState, useEffect } from 'react'
 import AppPagination from '../pages/pagination'
 import Stack from '@mui/material/Stack';
 // import { makeStyles } from '@mui/styles';
-import { kelas, itemKelas, kelasPerkuliahan, mataKuliah, materi } from "../dummy-data";
+import { kelas, kelasPerkuliahan, mataKuliah, materi } from "../dummy-data";
 import { multiStepContext } from '../pages/StepContext';
 import { BsPeopleFill, BsFillFileEarmarkTextFill } from 'react-icons/bs'
 import { HiPencilAlt } from 'react-icons/hi'
 import { TiArrowSortedDown } from 'react-icons/ti'
 import { GiBookCover } from 'react-icons/gi'
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "../pages/_app";
+import { Pagination, Navigation } from "swiper";
 
 
 export default function SecondStep() {
     const { setStep, userData, setUserData } = useContext(multiStepContext)
-    const [itemKelas, setTest] = useState([])
-
-    const renderItem = itemKelas.map((item, index) => {
-                <div className='flex text-center mt-[20px]' key={index}>
-                <input
-                    type="radio"
-                    name='metode'
-                    id={item.id2}
-                    className='peer hidden'
-                    value={item.title} />
-                <label htmlFor={item.id2} className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
-                    <span className='text-[#5885E9] hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#F5F7FF]'>
-                        {item.icon}</span>
-                    <h1 className='font-Cairo font-bold text-[19px] mb-[20px]'>{item.title}</h1>
-                    <h1 className='text-[14px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>{item.desc}</h1>
-                    <hr className='mx-[30px] border-[#B1C4F0]' />
-                    <div className='mx-[30px] mt-[30px]'>
-                        {
-                            item.benefit.map((sub, index) => {
-                                return (
-                                    <div key={index} className='flex flex-col text-[#494949] text-[14px]'>
-                                        <div className='flex flex-row font-Cairo text-left mb-[10px]'>
-                                            <span className='text-[#5885E9] mb-[10px] text-[12px]'>{sub.icon}</span>
-                                            <h1 className='ml-[10px] -mt-[5px]'>{sub.text}</h1>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </label>
-            </div>
-            })
 
     return (
         <>
             <form>
-                <div className='lg:mx-[100px] mx-[30px] mt-[50px] w-[344px] md:w-[700px] lg:w-[850px] xl:w-[1320px]'>
-                    <h1 className='md:text-[14px] xl:text-[16px] text-[12px] font-medium font-Rajdhani'>Kelas Pilihan</h1>
+                <div className='lg:mx-[100px] lg:w-[820px] sm:w-[650px] xl:w-[1300px] lg:mt-[100px] mx-[30px] mt-[50px] w-[344px]'>
+                    <h1 className='sm:text-[14px] xl:text-[16px] text-[12px] font-medium font-Rajdhani'>Kelas Pilihan</h1>
                     <h3 className='xl:text-[16px] text-[12px] lg:text-[14px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Pilih salah satu metode pembelajaran dan mata kuliah (kursus) serta materi yang ingin kamu pelajari atau diskusikan. Khusus <span className='font-bold'>Kelas Konsultasi</span> dan <span className='font-bold'>Kelas Persiapan Ujian</span>, jika jumlah materi yang dipilih melebihi batas yang ditentukan, maka Torche Education berhak untuk mengeliminasi materi sesuai dengan batas yang ditentukan. Sebagai contoh: Jika kalian memilih 3 materi (misalkan A, B, C) namun hanya ingin 1 pertemuan, maka Torche Education berhak mengeliminasi 1 materi. </h3>
 
                     <div>
                         <h1 className='font-bold text-[14px] md:text-[16px] mt-[30px] font-Cairo'>Metode Pembelajaran</h1>
                         <div className='flex-col hidden lg:flex md:flex-row '>
                             {
-                                kelas.map((item, index) => {
+                                kelas.map((item: any, index: any) => {
                                     return (
                                         <div className='flex text-center mt-[20px]' key={index}>
                                             <input
@@ -68,14 +40,14 @@ export default function SecondStep() {
                                                 className='peer hidden'
                                                 value={item.title} />
                                             <label htmlFor={item.id} className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
-                                                <span className='text-[#5885E9] hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#F5F7FF]'>
+                                                <span className='icon text-white hover:text-white hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#4D74CC]'>
                                                     {item.icon}</span>
                                                 <h1 className='font-Cairo font-bold text-[18px] md:text-[19px] mb-[20px]'>{item.title}</h1>
                                                 <h1 className='text-[12px] md:text-[13px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>{item.desc}</h1>
                                                 <hr className='mx-[30px] border-[#B1C4F0]' />
                                                 <div className='mx-[30px] mt-[30px]'>
                                                     {
-                                                        item.benefit.map((sub, index) => {
+                                                        item.benefit.map((sub: any, index: any) => {
                                                             return (
                                                                 <div key={index} className='flex flex-col text-[#494949] text-[14px]'>
                                                                     <div className='flex flex-row font-Cairo text-left mb-[10px]'>
@@ -96,10 +68,74 @@ export default function SecondStep() {
                     </div>
 
                     <div>
-                        <div className='flex md:flex-row'>
-                            {renderItem}
-                        </div>
-                        <AppPagination setTest={(p) => setTest(p)} />
+                        <Swiper
+                            pagination={{
+                                type: "fraction",
+                            }}
+                            className="mySwiper lg:hidden md:flex-row"
+                            navigation={true}
+                            modules={[Pagination, Navigation]}
+                        >
+                            <SwiperSlide>
+                                        <div className=''>
+                                            <div className='flex text-center'>
+                                                <input
+                                                    type="radio"
+                                                    name='metode'
+                                                    id=''
+                                                    className='peer hidden'
+                                                    value='' />
+                                                <label htmlFor='' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
+                                                    <span className='text-white hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#4D74CC]'>
+                                                        Test</span>
+                                                    <h1 className='font-Cairo font-bold text-[18px] md:text-[19px] mb-[20px]'>Halo</h1>
+                                                    <h1 className='text-[12px] md:text-[13px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>Yah</h1>
+                                                    <hr className='mx-[30px] border-[#B1C4F0]' />
+                                                    <div className='mx-[30px] mt-[30px]'>
+                                                    
+                                                                    <div className='flex flex-col text-[#494949] text-[14px]'>
+                                                                        <div className='flex flex-row font-Cairo text-left mb-[10px]'>
+                                                                            <span className='text-[#5885E9] mb-[10px] text-[12px]'>Yah</span>
+                                                                            <h1 className='ml-[10px] text-[12px] md:text-[13px] -mt-[5px]'>PPk</h1>
+                                                                        </div>
+                                                                    </div>
+                                                            
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+
+                                    <SwiperSlide>
+                                        <div className=''>
+                                            <div className='flex text-center'>
+                                                <input
+                                                    type="radio"
+                                                    name='metode'
+                                                    id=''
+                                                    className='peer hidden'
+                                                    value='' />
+                                                <label htmlFor='' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
+                                                    <span className='text-white hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#4D74CC]'>
+                                                        Test</span>
+                                                    <h1 className='font-Cairo font-bold text-[18px] md:text-[19px] mb-[20px]'>Halo</h1>
+                                                    <h1 className='text-[12px] md:text-[13px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>Yah</h1>
+                                                    <hr className='mx-[30px] border-[#B1C4F0]' />
+                                                    <div className='mx-[30px] mt-[30px]'>
+                                                    
+                                                                    <div className='flex flex-col text-[#494949] text-[14px]'>
+                                                                        <div className='flex flex-row font-Cairo text-left mb-[10px]'>
+                                                                            <span className='text-[#5885E9] mb-[10px] text-[12px]'>Yah</span>
+                                                                            <h1 className='ml-[10px] text-[12px] md:text-[13px] -mt-[5px]'>PPk</h1>
+                                                                        </div>
+                                                                    </div>
+                                                            
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                        </Swiper>
                     </div>
 
                     <div>
@@ -149,6 +185,8 @@ export default function SecondStep() {
                         </div>
                     </div>
 
+
+
                     <div className='mb-6 relative z-50 xl:hidden dropdown mt-[20px]'>
                         <label htmlFor='matakuliah' tabIndex={0} className='flex flex-col'>
                             <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
@@ -183,7 +221,7 @@ export default function SecondStep() {
                             value={userData['matakuliah']}
                             onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
                             id='matakuliah'
-                            className='border w-[344px] placeholder:text-[10px] md:placeholder:text-[13px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] font-Cairo border-[#B0B1B0] rounded-2xl p-2'
+                            className='border w-[344px] placeholder:text-[14px] md:placeholder:text-[13px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] font-Cairo border-[#B0B1B0] rounded-2xl p-2'
                             required
                             placeholder='Pilih Mata Kuliah' />
                     </div>
@@ -226,10 +264,10 @@ export default function SecondStep() {
                                                 value={item.title}
                                                 id={item.id}
                                                 name='materi'
-                                                className='peer absolute mt-[20px] md:mt-[12px] ml-[20px] border-[#B0B1B0]'
+                                                className='peer absolute mt-[20px] sm:mt-[12px] ml-[20px] border-[#B0B1B0]'
                                                 required
                                             />
-                                            <label htmlFor={item.id} className="ml-3 grid grid-cols-2 w-[150px] md:w-[300px] xl:w-[600px] pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
+                                            <label htmlFor={item.id} className="ml-3 grid grid-cols-2 w-[150px] sm:w-[300px] xl:w-[600px] pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
                                                 {item.title}</label>
                                         </div>
                                     )

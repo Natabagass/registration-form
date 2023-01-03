@@ -1,13 +1,13 @@
-import { itemKelas } from "../../dummy-data";
+import { kelas } from "../../dummy-data";
 
 const Service = {
     getData: ({from, to}) => {
         return new Promise((res, reject) => {
 
-            const data = itemKelas.slice(from, to);
+            const data = kelas.slice(from, to);
 
             res({
-                count: itemKelas.length,
+                count: kelas.length,
                 data: data
             })
         })

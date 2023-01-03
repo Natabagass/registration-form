@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/StepContext.jsx", "src/components/FourthStep.tsx", "src/components/SecondStep.jsx", "src/pages/service/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/StepContext.jsx", "src/components/FourthStep.tsx", "src/components/SecondStep.tsx", "src/pages/service/index.js"],
   "exclude": ["node_modules"]
 }
