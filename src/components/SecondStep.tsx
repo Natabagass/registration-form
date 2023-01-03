@@ -22,7 +22,7 @@ export default function SecondStep() {
     return (
         <>
             <form>
-                <div className='lg:mx-[100px] lg:w-[820px] sm:w-[650px] xl:w-[1300px] lg:mt-[100px] mx-[30px] mt-[50px] w-[344px]'>
+                <div className='lg:mx-[100px] lg:w-[820px] sm:w-[600px] xl:w-[1300px] lg:mt-[100px] mx-[30px] mt-[50px] w-[344px]'>
                     <h1 className='sm:text-[14px] xl:text-[16px] text-[12px] font-medium font-Rajdhani'>Kelas Pilihan</h1>
                     <h3 className='xl:text-[16px] text-[12px] lg:text-[14px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Pilih salah satu metode pembelajaran dan mata kuliah (kursus) serta materi yang ingin kamu pelajari atau diskusikan. Khusus <span className='font-bold'>Kelas Konsultasi</span> dan <span className='font-bold'>Kelas Persiapan Ujian</span>, jika jumlah materi yang dipilih melebihi batas yang ditentukan, maka Torche Education berhak untuk mengeliminasi materi sesuai dengan batas yang ditentukan. Sebagai contoh: Jika kalian memilih 3 materi (misalkan A, B, C) namun hanya ingin 1 pertemuan, maka Torche Education berhak mengeliminasi 1 materi. </h3>
 
@@ -76,65 +76,43 @@ export default function SecondStep() {
                             navigation={true}
                             modules={[Pagination, Navigation]}
                         >
-                            <SwiperSlide>
-                                        <div className=''>
-                                            <div className='flex text-center'>
-                                                <input
-                                                    type="radio"
-                                                    name='metode'
-                                                    id=''
-                                                    className='peer hidden'
-                                                    value='' />
-                                                <label htmlFor='' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
-                                                    <span className='text-white hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#4D74CC]'>
-                                                        Test</span>
-                                                    <h1 className='font-Cairo font-bold text-[18px] md:text-[19px] mb-[20px]'>Halo</h1>
-                                                    <h1 className='text-[12px] md:text-[13px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>Yah</h1>
-                                                    <hr className='mx-[30px] border-[#B1C4F0]' />
-                                                    <div className='mx-[30px] mt-[30px]'>
-                                                    
-                                                                    <div className='flex flex-col text-[#494949] text-[14px]'>
-                                                                        <div className='flex flex-row font-Cairo text-left mb-[10px]'>
-                                                                            <span className='text-[#5885E9] mb-[10px] text-[12px]'>Yah</span>
-                                                                            <h1 className='ml-[10px] text-[12px] md:text-[13px] -mt-[5px]'>PPk</h1>
-                                                                        </div>
-                                                                    </div>
-                                                            
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-
+                            {kelas.map((item, index) => {
+                                return (
                                     <SwiperSlide>
-                                        <div className=''>
-                                            <div className='flex text-center'>
+                                        <div className='w-[500px] justify-center flex'>
+                                            <div className='flex text-center' key={index}>
                                                 <input
                                                     type="radio"
                                                     name='metode'
-                                                    id=''
+                                                    id={item.id2}
                                                     className='peer hidden'
-                                                    value='' />
-                                                <label htmlFor='' className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
+                                                    value={item.title} />
+                                                <label htmlFor={item.id2} className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
                                                     <span className='text-white hover:text-[white] hover:bg-[#4D74CC] rounded-full my-[50px] flex mx-auto w-fit p-5 text-[20px] bg-[#4D74CC]'>
-                                                        Test</span>
-                                                    <h1 className='font-Cairo font-bold text-[18px] md:text-[19px] mb-[20px]'>Halo</h1>
-                                                    <h1 className='text-[12px] md:text-[13px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>Yah</h1>
+                                                        {item.icon}</span>
+                                                    <h1 className='font-Cairo font-bold text-[18px] md:text-[19px] mb-[20px]'>{item.title}</h1>
+                                                    <h1 className='text-[12px] md:text-[13px] font-Cairo mx-[20px] text-[#727272] mb-[20px]'>{item.desc}</h1>
                                                     <hr className='mx-[30px] border-[#B1C4F0]' />
                                                     <div className='mx-[30px] mt-[30px]'>
-                                                    
-                                                                    <div className='flex flex-col text-[#494949] text-[14px]'>
+                                                        {
+                                                            item.benefit.map((sub: any, index: any) => {
+                                                                return (
+                                                                    <div key={index} className='flex flex-col text-[#494949] text-[14px]'>
                                                                         <div className='flex flex-row font-Cairo text-left mb-[10px]'>
-                                                                            <span className='text-[#5885E9] mb-[10px] text-[12px]'>Yah</span>
-                                                                            <h1 className='ml-[10px] text-[12px] md:text-[13px] -mt-[5px]'>PPk</h1>
+                                                                            <span className='text-[#5885E9] mb-[10px] text-[12px]'>{sub.icon}</span>
+                                                                            <h1 className='ml-[10px] text-[12px] md:text-[13px] -mt-[5px]'>{sub.text}</h1>
                                                                         </div>
                                                                     </div>
-                                                            
+                                                                )
+                                                            })
+                                                        }
                                                     </div>
                                                 </label>
                                             </div>
                                         </div>
                                     </SwiperSlide>
+                                )
+                            })}
                         </Swiper>
                     </div>
 
