@@ -13,7 +13,7 @@ export default function FirstStep() {
 
     return (
         <>
-            <div className='lg:mx-[100px] sm:w-[650px] mx-[20px] lg:w-[820px] xl:w-[1300px] lg:mt-[100px]'>
+            <div className='lg:mx-[100px] sm:w-[600px] mx-[20px] lg:w-[820px] xl:w-[1300px] lg:mt-[100px]'>
                 <h1 className='font-medium vsm:text-[22px] font-Rajdhani mt-[50px] lg:mt-[50px] text-[#151515] lg:text-[30px]'>Data Personal</h1>
                 <h3 className='text-[#727272] lg:leading-[26px] leading-[24px] font-Cairo text-[12px] xl:w-[1300px] lg:w-[820px] vsm:w-[344px] lg:text-[16px]'>Masukkan data diri kamu untuk memulai kelas. Satu formulir hanya bisa digunakan untuk satu Mata Kuliah (Kursus), namun teman-teman bisa memilih beberapa Sesi Pelajaran di dalam satu mata kuliah tersebut.</h3>
 
@@ -216,7 +216,7 @@ export default function FirstStep() {
                             <button 
                                 type='submit' 
                                 onClick={nextStep} 
-                                className='mr-0 ml-auto block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'
+                                className=' mr-0 ml-auto block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'
                                 >
                                     Berikutnya
                             </button>

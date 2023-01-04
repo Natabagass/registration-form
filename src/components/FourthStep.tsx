@@ -35,7 +35,7 @@ export default function FourthStep() {
                         <div className='flex flex-col md:flex-row justify-start'>
                                 <div className='border flex flex-col w-[300px] border-[#B1C4F0] mt-[10px] rounded-xl'>
                                     <div className='p-5'>
-                                        <div className='text-[#5885E9] font-bold'>Rp. {price} <span className='font-normal text-[#A7A7A7]'>/sesi</span></div>
+                                        <CurrencyFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'Rp. '} className='text-[#5885E9] font-bold'><span className='font-normal text-[#A7A7A7]'>/sesi</span></CurrencyFormat>
                                         <div className='flex flex-row'>
                                             <div className='flex flex-row mt-[5px] text-[16px] text-[#FFAE5F]'><BsFillPersonFill /><span className='-mt-[4px] text-[#727272] ml-[5px] text-[13px]'>1-5 orang</span></div>
                                             <div className='mx-auto flex justify-end w-[180px] -mt-[20px] text-[#B1C4F0] text-[31px]'><FaCoins /></div>

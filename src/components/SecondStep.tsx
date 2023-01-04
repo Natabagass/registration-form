@@ -14,6 +14,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../pages/_app";
 import { Pagination, Navigation } from "swiper";
+import * as CurrencyFormat from 'react-currency-format';
 
 
 export default function SecondStep() {
@@ -245,7 +246,7 @@ export default function SecondStep() {
                                                 className='peer absolute mt-[20px] sm:mt-[12px] ml-[20px] border-[#B0B1B0]'
                                                 required
                                             />
-                                            <label htmlFor={item.id} className="ml-3 grid grid-cols-2 w-[150px] sm:w-[300px] xl:w-[600px] pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
+                                            <label htmlFor={item.id} className="ml-3 grid grid-cols-2 w-[150px] sm:w-[295px] xl:w-[600px] pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
                                                 {item.title}</label>
                                         </div>
                                     )
