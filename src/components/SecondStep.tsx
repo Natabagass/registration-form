@@ -23,8 +23,8 @@ export default function SecondStep() {
     return (
         <>
             <form>
-                <div className='lg:mx-[100px] lg:w-[820px] sm:w-[600px] xl:w-[1300px] lg:mt-[100px] mx-[30px] mt-[50px] w-[344px]'>
-                    <h1 className='sm:text-[14px] xl:text-[16px] text-[12px] font-medium font-Rajdhani'>Kelas Pilihan</h1>
+                <div className='lg:mx-[100px] xl:w-[1300px] lg:mt-[100px] mx-[30px] mt-[50px] w-100'>
+                <h1 className='font-Rajdhani font-medium lg:text-[28px] xl:text-[28px] text-[22px]'>Kelas Pilihan</h1>
                     <h3 className='xl:text-[16px] text-[12px] lg:text-[14px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Pilih salah satu metode pembelajaran dan mata kuliah (kursus) serta materi yang ingin kamu pelajari atau diskusikan. Khusus <span className='font-bold'>Kelas Konsultasi</span> dan <span className='font-bold'>Kelas Persiapan Ujian</span>, jika jumlah materi yang dipilih melebihi batas yang ditentukan, maka Torche Education berhak untuk mengeliminasi materi sesuai dengan batas yang ditentukan. Sebagai contoh: Jika kalian memilih 3 materi (misalkan A, B, C) namun hanya ingin 1 pertemuan, maka Torche Education berhak mengeliminasi 1 materi. </h3>
 
                     <div>
@@ -73,15 +73,22 @@ export default function SecondStep() {
                             pagination={{
                                 type: "fraction",
                             }}
-                            className="mySwiper lg:hidden md:flex-row"
-                            navigation={true}
+                            className="mySwiper lg:hidden md:flex-row justify-center "
+                            // navigation={true}
+                            navigation={{
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            }}
+                            style={{
+                                "--swiper-navigation-size" : "25px",
+                            }}
                             modules={[Pagination, Navigation]}
                         >
                             {kelas.map((item, index) => {
                                 return (
                                     <SwiperSlide>
-                                        <div className='w-[500px] justify-center flex'>
-                                            <div className='flex text-center' key={index}>
+                                        <div className='w-100 ml-[30px] mr-[20px] justify-center flex'>
+                                            <div className='flex text-center justify-center' key={index}>
                                                 <input
                                                     type="radio"
                                                     name='metode'
@@ -114,6 +121,9 @@ export default function SecondStep() {
                                     </SwiperSlide>
                                 )
                             })}
+                            {/* <!-- Add Arrows --> */}
+                            <div className="swiper-button-prev mr-[30px]"></div>
+                            <div className="swiper-button-next ml-[30px]"></div>
                         </Swiper>
                     </div>
 
@@ -232,21 +242,21 @@ export default function SecondStep() {
                         <h1 className='font-bold mt-[30px] font-Cairo'>Materi</h1>
                         <h3 className='text-[14px] md:text-[16px] font-Cairo text-[#727272]'>Kultur Sel Untuk Teknik</h3>
 
-                        <div className='grid grid-cols-2 flex-wrap'>
+                        <div className='grid sm:grid-cols-2 flex-wrap'>
                             {
                                 materi.map((item, index) => {
                                     return (
-                                        <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
+                                        <div key={index} className='px-2 -ml-[20px] mr-[20px] mt-[20px]'>
                                             <input
                                                 type="checkbox"
                                                 onChange={(e) => setUserData({ ...userData, "materi": e.target.value })}
                                                 value={item.title}
                                                 id={item.id}
                                                 name='materi'
-                                                className='peer absolute mt-[20px] sm:mt-[12px] ml-[20px] border-[#B0B1B0]'
+                                                className='peer absolute mt-[17.5px] ml-[20px] border-[#B0B1B0]'
                                                 required
                                             />
-                                            <label htmlFor={item.id} className="ml-3 grid grid-cols-2 w-[150px] sm:w-[295px] xl:w-[600px] pl-[30px] peer-checked:bg-[#F5F7FF]  rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px]">
+                                            <label htmlFor={item.id} className="ml-3 grid w-100 pl-[30px] peer-checked:bg-[#F5F7FF] rounded-xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-3 peer-checked:text-[#5885E9] text-[13px]">
                                                 {item.title}</label>
                                         </div>
                                     )
