@@ -318,7 +318,25 @@ export const mataKuliah = [
         id: '1',
         id2: 'matkul1',
         title: 'Dasar-Dasar Kimia Analitik',
-        jumlah: 'Tersedia 4 materi'
+        jumlah: 'Tersedia 4 materi',
+        matpel:[
+            {
+                desc: 'Materi 1',
+                id: 'Materi1'
+            },
+            {
+                desc: 'Materi 2',
+                id: 'Materi2'
+            },
+            {
+                desc: 'Materi 3',
+                id: 'Materi3'
+            },
+            {
+                desc: 'Materi 4',
+                id: 'Materi4'
+            }
+        ]
     },
     {
         id: '2',
@@ -460,21 +478,3 @@ export const mataKuliah = [
     }
 ]
 
-export const materi = [
-    {
-        id: 'materi1',
-        title: 'Kultur Jaringan'
-    },
-    {
-        id: 'materi2',
-        title: 'Kultur Sel Hewan'
-    },
-    {
-        id: 'materi3',
-        title: 'Kontaminasi Kultur Sel'
-    },
-    {
-        id: 'materi4',
-        title: 'Kultur Sel Bioproses'
-    },
-]

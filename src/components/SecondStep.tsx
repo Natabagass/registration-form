@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import AppPagination from '../pages/pagination'
 import Stack from '@mui/material/Stack';
 // import { makeStyles } from '@mui/styles';
-import { kelas, kelasPerkuliahan, mataKuliah, materi } from "../dummy-data";
+import { kelas, kelasPerkuliahan, mataKuliah } from "../dummy-data";
 import { multiStepContext } from '../pages/StepContext';
 import { BsPeopleFill, BsFillFileEarmarkTextFill } from 'react-icons/bs'
 import { HiPencilAlt } from 'react-icons/hi'
@@ -14,17 +14,21 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../pages/_app";
 import { Pagination, Navigation } from "swiper";
-import * as CurrencyFormat from 'react-currency-format';
 
 
 export default function SecondStep() {
     const { setStep, userData, setUserData } = useContext(multiStepContext)
+    const [materiPilihan, setMateriPilihan] = useState('')
+
+    const handleClick = (e: any) => {
+        
+    }
 
     return (
         <>
             <form>
                 <div className='lg:mx-[100px] xl:w-[1300px] lg:mt-[100px] mx-[30px] mt-[50px] w-100'>
-                <h1 className='font-Rajdhani font-medium lg:text-[28px] xl:text-[28px] text-[22px]'>Kelas Pilihan</h1>
+                    <h1 className='font-Rajdhani font-medium lg:text-[28px] xl:text-[28px] text-[22px]'>Kelas Pilihan</h1>
                     <h3 className='xl:text-[16px] text-[12px] lg:text-[14px] font-Cairo lg:leading-[26px] leading-[24px] text-[#727272]'>Pilih salah satu metode pembelajaran dan mata kuliah (kursus) serta materi yang ingin kamu pelajari atau diskusikan. Khusus <span className='font-bold'>Kelas Konsultasi</span> dan <span className='font-bold'>Kelas Persiapan Ujian</span>, jika jumlah materi yang dipilih melebihi batas yang ditentukan, maka Torche Education berhak untuk mengeliminasi materi sesuai dengan batas yang ditentukan. Sebagai contoh: Jika kalian memilih 3 materi (misalkan A, B, C) namun hanya ingin 1 pertemuan, maka Torche Education berhak mengeliminasi 1 materi. </h3>
 
                     <div>
@@ -80,7 +84,7 @@ export default function SecondStep() {
                                 prevEl: '.swiper-button-prev',
                             }}
                             style={{
-                                "--swiper-navigation-size" : "25px",
+                                "--swiper-navigation-size": "25px",
                             }}
                             modules={[Pagination, Navigation]}
                         >
@@ -238,32 +242,53 @@ export default function SecondStep() {
                     </div>
 
                     <div>
-                        <button className='ml-0 mr-auto block border-[#5885E9] font-Cairo rounded-xl my-[70px] px-5 text-[#5885E9] text-[16px] p-2 font-bold border' type='submit'>Pilih Materi</button>
-                        <h1 className='font-bold mt-[30px] font-Cairo'>Materi</h1>
-                        <h3 className='text-[14px] md:text-[16px] font-Cairo text-[#727272]'>Kultur Sel Untuk Teknik</h3>
+                        <button type='button' onClick={(e) => {
+                            e.preventDefault()
+                            const data = userData['matakuliah']
 
-                        <div className='grid sm:grid-cols-2 flex-wrap'>
+                            setMateriPilihan(data)
+                            console.log(materiPilihan === data)
                             {
-                                materi.map((item, index) => {
+                                mataKuliah.map((item: any, index: any) => {
                                     return (
-                                        <div key={index} className='px-2 -ml-[20px] mr-[20px] mt-[20px]'>
-                                            <input
-                                                type="checkbox"
-                                                onChange={(e) => setUserData({ ...userData, "materi": e.target.value })}
-                                                value={item.title}
-                                                id={item.id}
-                                                name='materi'
-                                                className='peer absolute mt-[17.5px] ml-[20px] border-[#B0B1B0]'
-                                                required
-                                            />
-                                            <label htmlFor={item.id} className="ml-3 grid w-100 pl-[30px] peer-checked:bg-[#F5F7FF] rounded-xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-3 peer-checked:text-[#5885E9] text-[13px]">
-                                                {item.title}</label>
+                                        <div className='grid sm:grid-cols-2 flex-wrap'>
+                                            {materiPilihan === item.title ?
+                                                <div>
+                                                    {
+                                                        Object.keys(item).includes('matpel') &&
+                                                        item.matpel.map((sub: any, idx: any) => {
+                                                            return (
+                                                                <div key={idx} className='px-2 -ml-[20px] mr-[20px] mt-[20px]'>
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        onChange={(e) => setUserData({ ...userData, "materi": e.target.value })}
+                                                                        value={sub.desc}
+                                                                        id={sub.id}
+                                                                        name='materi'
+                                                                        className='peer absolute mt-[17.5px] ml-[20px] border-[#B0B1B0]'
+                                                                        required
+                                                                    />
+                                                                    <label htmlFor={sub.id} className="ml-3 grid w-100 pl-[30px] peer-checked:bg-[#F5F7FF] rounded-xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-3 peer-checked:text-[#5885E9] text-[13px]">
+                                                                        {sub.desc}</label>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    }
+                                                </div> :
+                                                <p>Materi Tidak ada</p>
+                                            }
                                         </div>
                                     )
                                 })
                             }
-                        </div>
+                        }} className='ml-0 mr-auto block border-[#5885E9] font-Cairo rounded-xl my-[70px] px-5 text-[#5885E9] text-[16px] p-2 font-bold border'>Pilih Materi</button>
                     </div>
+
+                    <div>
+                        <h1 className='font-bold font-Cairo'>Materi</h1>
+                        <h3 className='text-[14px] md:text-[16px] font-Cairo text-[#727272]'>{materiPilihan}</h3>
+                    </div>
+
                     <div className='flex flex-row'>
                         <button type='submit' onClick={() => setStep(1)} className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
                         <button type='submit' onClick={() => setStep(3)} className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Berikutnya</button>
@@ -273,5 +298,3 @@ export default function SecondStep() {
         </>
     )
 }
-
-
