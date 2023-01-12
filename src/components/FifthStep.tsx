@@ -6,7 +6,7 @@ import HeroIcons from '../assets/img/Form 5.png'
 import { FaPen } from 'react-icons/fa';
 
 export default function FifthStep() {
-    const {setStep, userData, setUserData} = useContext(multiStepContext)
+    const {setStep, userData, setUserData, submitData, sendData} = useContext(multiStepContext)
     return (
         <>
             <div className='flex flex-col items-center mt-[50px]'>
@@ -21,7 +21,7 @@ export default function FifthStep() {
                                 return(
                                     <div key={index} className="mt-[30px] mx-[10px]">
                                         <div className='flex text-center font-Cairo text-[11px] flex-col'>
-                                            <input id={data.id} checked className='flex-row peer hidden' type="radio" name="rating" />
+                                            <input id={data.id} checked className='flex-row peer hidden' type="radio" name="pointOfForm" />
                                             <label htmlFor={data.id} className='text-[50px] peer-checked:text-[#FFAE5F] hover:text-[#4D74CC]  mb-[20px] text-[#A7ABB8] justify-center flex'>{data.icon}</label>
                                             {data.label}
                                         </div>
@@ -38,9 +38,9 @@ export default function FifthStep() {
                                 </div>
                                 <textarea 
                                     rows={4}
-                                    onChange={(e) => setUserData({...userData, "saran" : e.target.value})} 
-                                    value= {userData['saran']}
-                                    name='saran' 
+                                    onChange={(e) => setUserData({...userData, "messageOfForm" : e.target.value})} 
+                                    value= {userData['messageOfForm']}
+                                    name='messageOfForm' 
                                     className='border outline-none h-[200px] focus:ring-2  focus:ring-[#3C64B1] w-[344px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
                                     required 
                                     placeholder='Tuliskan masukkanmu disini'/>
@@ -48,7 +48,7 @@ export default function FifthStep() {
                     </div>
                 </form>
                 <div className='flex flex-col'>
-                    <button onClick={() => setStep(3)} className='bg-[#5885E9] font-Cairo rounded-xl mt-[30px] mb-[10px] shadow-effect px-[90px] lg:px-5 text-white p-3 font-bold'>Kembali ke Beranda</button>
+                    <button onClick={sendData} className='bg-[#5885E9] font-Cairo rounded-xl mt-[30px] mb-[10px] shadow-effect px-[90px] lg:px-5 text-white p-3 font-bold'>Kembali ke Beranda</button>
                     <button onClick={() => setStep(3)} className=' font-Cairo text-[#5885E9] rounded-xl text-center px-5 mb-[50px] underline p-3 font-bold'>Daftar Kelas Lainnya</button>
                 </div>
             </div>

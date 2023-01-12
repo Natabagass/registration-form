@@ -71,9 +71,9 @@ export default function ThirdStep() {
                                                 </div>
                                                 <input
                                                     type="text"
-                                                    name='fullname'
-                                                    onChange={(e) => setUserData({ ...userData, "fullname": e.target.value })}
-                                                    value={userData['fullname']}
+                                                    name='fullName'
+                                                    onChange={(e) => setUserData({ ...userData, "fullName": e.target.value })}
+                                                    value={userData['fullName']}
                                                     className='border pl-[40px] outline-none hover:border-[#4D74CC] focus:border-[#5885E9] w-full text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
                                                     required
                                                     placeholder='Tulis nama lengkap' />
@@ -82,7 +82,7 @@ export default function ThirdStep() {
                                             <label className='font-bold  text-[16px]'>Nomor Handphone</label>
                                             <div className='mb-6 relative'>
                                                 <div className="flex mt-[10px]">
-                                                    <select className="border outline-none bg-[#F5F8FF] text-[#5885E9] focus:border-[#5885E9] hover:border-[#5885E9] text-[13px] border-[#B0B1B0] rounded-l-2xl px-3 py-1">
+                                                    <select name='phoneNumber' className="border outline-none bg-[#F5F8FF] text-[#5885E9] focus:border-[#5885E9] hover:border-[#5885E9] text-[13px] border-[#B0B1B0] rounded-l-2xl px-3 py-1">
                                                         {CountryCode.map((item, index) => {
                                                             return (
                                                                 <option key={index}>+{item.dial_code}</option>
@@ -90,7 +90,7 @@ export default function ThirdStep() {
                                                         })
                                                         }
                                                     </select>
-                                                    <input type="tel" className="border lg:w-[415px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[260px] text-[13px] border-[#B0B1B0] rounded-r-2xl p-2" placeholder="Tulis nomor handphone"></input>
+                                                    <input type="tel" name='phoneNumber' className="border lg:w-[415px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[260px] text-[13px] border-[#B0B1B0] rounded-r-2xl p-2" placeholder="Tulis nomor handphone"></input>
                                                 </div>
                                             </div>
 

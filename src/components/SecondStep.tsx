@@ -20,10 +20,6 @@ export default function SecondStep() {
     const { setStep, userData, setUserData } = useContext(multiStepContext)
     const [materiPilihan, setMateriPilihan] = useState('')
 
-    const handleClick = (e: any) => {
-        
-    }
-
     return (
         <>
             <form>
@@ -40,7 +36,7 @@ export default function SecondStep() {
                                         <div className='flex text-center mt-[20px]' key={index}>
                                             <input
                                                 type="radio"
-                                                name='metode'
+                                                name='learningMethod'
                                                 id={item.id}
                                                 className='peer hidden'
                                                 value={item.title} />
@@ -95,8 +91,9 @@ export default function SecondStep() {
                                             <div className='flex text-center justify-center' key={index}>
                                                 <input
                                                     type="radio"
-                                                    name='metode'
+                                                    name='learningMethod'
                                                     id={item.id2}
+                                                    onChange={(e) => setUserData({ ...userData, "learningMethod": e.target.value })}
                                                     className='peer hidden'
                                                     value={item.title} />
                                                 <label htmlFor={item.id2} className="border peer-checked:bg-[#F5F7FF] peer-checked:text-[#5885E9] hover:border-[#4D74CC] -ml-[2px] mx-[30px] rounded-xl peer-checked:border-[#5885E9]">
@@ -142,9 +139,9 @@ export default function SecondStep() {
                                                 <input
                                                     type="radio"
                                                     id={item.id}
-                                                    onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                                    onChange={(e) => setUserData({ ...userData, "learningSubject": e.target.value })}
                                                     value={item.title}
-                                                    name="matakuliah"
+                                                    name="learningSubject"
                                                     className='peer mt-[20px] absolute ml-[30px]' />
                                                 <label htmlFor={item.id} className='flex ml-[20px] hover:border-[#5885E9] w-[400px] pl-[40px] border rounded-2xl peer-checked:bg-[#F5F7FF] p-2 border-[#B0B1B0] peer-checked:border-[#5885E9] flex-col'>
                                                     <h1 className='text-[13px] text-[#151515] font-Cairo'>{item.title}</h1>
@@ -160,8 +157,8 @@ export default function SecondStep() {
                                             <input
                                                 type="radio"
                                                 id="matkulLain"
-                                                onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
-                                                name='matakuliah'
+                                                onChange={(e) => setUserData({ ...userData, "learningSubject": e.target.value })}
+                                                name='learningSubject'
                                                 className='absolute peer mt-[7px] border-[#B0B1B0]' />
                                             <label htmlFor="matkulLain" className="-ml-[10px] font-Cairo text-[10px] md:text-[13px] pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0]  p-2 peer-checked:text-[#5885E9] text-center">Lainnya</label>
                                         </div>
@@ -169,9 +166,9 @@ export default function SecondStep() {
                                 </div>
                                 <input
                                     type="text"
-                                    name="matakuliah"
+                                    name="learningSubject"
                                     id="matkulLain"
-                                    onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                    onChange={(e) => setUserData({ ...userData, "learningSubject": e.target.value })}
                                     className='-ml-[50px] placeholder:font-Cairo outline-none focus:ring-1 hover:border-[#5885E9] focus:ring-[#5885E9] text-[10px] md:text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[22px] border z-10'
                                     placeholder='Masukkan mata kuliah' />
                             </div>
@@ -181,7 +178,7 @@ export default function SecondStep() {
 
 
                     <div className='mb-6 relative z-50 xl:hidden dropdown mt-[20px]'>
-                        <label htmlFor='matakuliah' tabIndex={0} className='flex flex-col'>
+                        <label tabIndex={0} className='flex flex-col'>
                             <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
                                 <TiArrowSortedDown className='text-[#B0B1B0] text-[18px] mt-[10px]' />
                             </div>
@@ -195,11 +192,11 @@ export default function SecondStep() {
                                             <div className='flex flex-row w-[300px]' key={index}>
                                                 <input
                                                     type="radio"
-                                                    name='matakuliah'
+                                                    name='learningSubject'
                                                     value={item.title}
                                                     id={item.id2}
                                                     className="hidden peer"
-                                                    onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                                                    onChange={(e) => setUserData({ ...userData, "learningSubject": e.target.value })}
                                                 />
                                                 <label htmlFor={item.id2} className="my-[10px] text-[12px] md:text-[13px] font-Cairo py-[10px] px-[10px] rounded-xl w-full peer-checked:bg-[#F5F7FF]">{item.title}</label>
                                             </div>
@@ -210,10 +207,10 @@ export default function SecondStep() {
                         </label>
                         <input
                             type="text"
-                            name='matakuliah'
-                            value={userData['matakuliah']}
-                            onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
-                            id='matakuliah'
+                            name='learningSubject'
+                            value={userData['learningSubject']}
+                            onChange={(e) => setUserData({ ...userData, "learningSubject": e.target.value })}
+                            id='learningSubject'
                             className='border w-[344px] placeholder:text-[14px] md:placeholder:text-[13px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] font-Cairo border-[#B0B1B0] rounded-2xl p-2'
                             required
                             placeholder='Pilih Mata Kuliah' />
@@ -225,8 +222,8 @@ export default function SecondStep() {
                                     <input
                                         type="radio"
                                         id="matkulLainMobile"
-                                        onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
-                                        name='matakuliah'
+                                        onChange={(e) => setUserData({ ...userData, "learningSubject": e.target.value })}
+                                        name='learningSubject'
                                         className='absolute peer mt-[7px] border-[#B0B1B0]' />
                                     <label htmlFor="matkulLainMobile" className="-ml-[10px] font-Cairo pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
                                 </div>
@@ -234,9 +231,9 @@ export default function SecondStep() {
                         </div>
                         <input
                             type="text"
-                            name="matakuliah"
+                            name="learningSubject"
                             id="matkulLainMobile"
-                            onChange={(e) => setUserData({ ...userData, "matakuliah": e.target.value })}
+                            onChange={(e) => setUserData({ ...userData, "learningSubject": e.target.value })}
                             className='-ml-[50px] placeholder:font-Cairo outline-none focus:ring-1 hover:border-[#5885E9] focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[22px] border z-10'
                             placeholder='Masukkan mata kuliah' />
                     </div>
@@ -244,7 +241,7 @@ export default function SecondStep() {
                     <div>
                         <button type='button' onClick={(e) => {
                             e.preventDefault()
-                            const data = userData['matakuliah']
+                            const data = userData['learningSubject']
 
                             setMateriPilihan(data)
                             console.log(materiPilihan === data)
@@ -261,10 +258,10 @@ export default function SecondStep() {
                                                                 <div key={idx} className='px-2 -ml-[20px] mr-[20px] mt-[20px]'>
                                                                     <input
                                                                         type="checkbox"
-                                                                        onChange={(e) => setUserData({ ...userData, "materi": e.target.value })}
+                                                                        onChange={(e) => setUserData({ ...userData, "subSubject": e.target.value })}
                                                                         value={sub.desc}
                                                                         id={sub.id}
-                                                                        name='materi'
+                                                                        name='subSubject'
                                                                         className='peer absolute mt-[17.5px] ml-[20px] border-[#B0B1B0]'
                                                                         required
                                                                     />

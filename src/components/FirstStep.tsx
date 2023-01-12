@@ -9,7 +9,7 @@ import { object, mixed, number } from 'yup';
 import { CountryCode } from '../pages/api/CountryCodes.js';
 
 export default function FirstStep() {
-    const {setStep, userData, setUserData, nextStep} = useContext(multiStepContext);
+    const {setStep, userData, setUserData} = useContext(multiStepContext);
 
     return (
         <>
@@ -26,7 +26,7 @@ export default function FirstStep() {
                                     <MdEmail className='fill-[#B0B1B0] hover:fill-[#5885E9] text-[18px] mt-[10px]'/>
                                 </label>
                                 <input 
-                                    type="text" 
+                                    type="text"  
                                     onChange={(e) => setUserData({...userData, "email" : e.target.value})} 
                                     value= {userData['email']}
                                     name='email' 
@@ -42,9 +42,9 @@ export default function FirstStep() {
                                 </div>
                                 <input 
                                     type="text" 
-                                    name='fullname' 
-                                    onChange={(e) => setUserData({...userData, "fullname" : e.target.value})} 
-                                    value= {userData['fullname']}
+                                    name='fullName' 
+                                    onChange={(e) => setUserData({...userData, "fullName" : e.target.value})} 
+                                    value= {userData['fullName']}
                                     className='border lg:w-[500px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] pl-[40px] w-[344px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
                                     required  
                                     placeholder='Tulis nama lengkap'/>
@@ -53,15 +53,15 @@ export default function FirstStep() {
                             <h1 className='font-bold  text-[16px]'>Nomor Handphone</h1>
                             <div className='mb-6 relative'>
                                 <div className="flex mt-[10px]">
-                                    <select className="border outline-none bg-[#F5F8FF] text-[#5885E9] focus:border-[#5885E9] hover:border-[#5885E9] text-[13px] border-[#B0B1B0] rounded-l-2xl px-3 py-1">
+                                    <select name="phoneNumber" className="border text-[12px] w-[130px] outline-none bg-[#F5F8FF] text-[#5885E9] focus:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] rounded-l-2xl px-3 py-1">
                                         {CountryCode.map((item, index) => {
                                                 return (
-                                                    <option key={index}>+{item.dial_code}</option>
+                                                    <option key={index} className="text-[12px]">+{item.dial_code} ({item.name})</option>
                                                 )
                                             })
                                         }
                                     </select>
-                                    <input type="tel" className="border lg:w-[415px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[260px] text-[13px] border-[#B0B1B0] rounded-r-2xl p-2" placeholder="Tulis nomor handphone"></input>
+                                    <input type="tel" name='phoneNumber' className="border lg:w-[415px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] w-[260px] text-[13px] border-[#B0B1B0] rounded-r-2xl p-2" placeholder="Tulis nomor handphone"></input>
                                 </div>
                             </div>
 
@@ -73,10 +73,10 @@ export default function FirstStep() {
                                             <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
                                                 <input 
                                                     type="radio" 
-                                                    onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
+                                                    onChange={(e) => setUserData({...userData, "education" : e.target.value})} 
                                                     value= {data.label}
                                                     id={data.id}  
-                                                    name='program_studi' 
+                                                    name='education' 
                                                     className='peer absolute mt-[7px] ml-[20px]' 
                                                     required
                                                     />
@@ -93,8 +93,8 @@ export default function FirstStep() {
                                             <input 
                                                 type="radio" 
                                                 id="lainnya"
-                                                onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
-                                                name='program_studi' 
+                                                onChange={(e) => setUserData({...userData, "education" : e.target.value})} 
+                                                name='education' 
                                                 className='absolute peer mt-[7px] border-[#B0B1B0]' />
                                             <label htmlFor="lainnya" className="-ml-[10px] lg: pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
                                         </div>
@@ -102,9 +102,9 @@ export default function FirstStep() {
                                 </div>
                                 <input 
                                     type="text" 
-                                    name="program_studi" 
+                                    name="education" 
                                     id="textLain" 
-                                    onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
+                                    onChange={(e) => setUserData({...userData, "education" : e.target.value})} 
                                     className='-ml-[50px] outline-none focus:ring-1 placeholder:font-Cairo focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan program studi'/>
                             </div>
@@ -116,9 +116,9 @@ export default function FirstStep() {
                                 </div>
                                 <input 
                                     type="text" 
-                                    name='angkatan' 
-                                    onChange={(e) => setUserData({...userData, "angkatan" : e.target.value})} 
-                                    value= {userData['angkatan']}
+                                    name='longEducation' 
+                                    onChange={(e) => setUserData({...userData, "longEducation" : e.target.value})} 
+                                    value= {userData['longEducation']}
                                     className='border vsm:w-[344px] outline-none focus:border-[#5885E9] hover:border-[#5885E9] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2' 
                                     required  
                                     placeholder='Tahun Angkatan'/>
@@ -132,10 +132,10 @@ export default function FirstStep() {
                                             <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
                                             <input 
                                                 type="radio" 
-                                                onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
+                                                onChange={(e) => setUserData({...userData, "schoolName" : e.target.value})} 
                                                 value= {data.label}
                                                 id={data.id}  
-                                                name='universitas' 
+                                                name='schoolName' 
                                                 className='peer absolute mt-[7px] ml-[20px] border-[#B0B1B0]' 
                                                 required
                                                 />
@@ -152,8 +152,8 @@ export default function FirstStep() {
                                                 <input 
                                                     type="radio" 
                                                     id="univLain"
-                                                    onChange={(e) => setUserData({...userData, "universitas" : e.target.value})} 
-                                                    name='universitas' 
+                                                    onChange={(e) => setUserData({...userData, "schoolName" : e.target.value})} 
+                                                    name='schoolName' 
                                                     className='absolute peer mt-[7px] border-[#B0B1B0]' />
                                                 <label htmlFor="univLain" className="-ml-[10px] lg: pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
                                             </div>
@@ -161,9 +161,9 @@ export default function FirstStep() {
                                     </div>
                                     <input 
                                     type="text" 
-                                    name="program_studi" 
+                                    name="schoolName" 
                                     id="textUnivLain" 
-                                    onChange={(e) => setUserData({...userData, "program_studi" : e.target.value})} 
+                                    onChange={(e) => setUserData({...userData, "schoolName" : e.target.value})} 
                                     className='-ml-[50px] outline-none focus:ring-1 focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan universitas'/>
                                 </div>
@@ -177,10 +177,10 @@ export default function FirstStep() {
                                             <div key={index} className='p-2 -ml-[20px] mr-[20px] mt-[20px]'>
                                             <input 
                                                 type="checkbox" 
-                                                onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
+                                                onChange={(e) => setUserData({...userData, "knowForm" : e.target.value})} 
                                                 value= {data.label}
                                                 id={data.id}  
-                                                name='sosmed' 
+                                                name='knowForm' 
                                                 className='peer absolute mt-[7px] ml-[20px] border-[#B0B1B0]' 
                                                 required
                                                 />
@@ -196,8 +196,8 @@ export default function FirstStep() {
                                                 <input 
                                                     type="checkbox" 
                                                     id="sosmedLain"
-                                                    onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
-                                                    name='sosmed' 
+                                                    onChange={(e) => setUserData({...userData, "knowForm" : e.target.value})} 
+                                                    name='knowForm' 
                                                     className='absolute peer mt-[7px] border-[#B0B1B0]' />
                                                 <label htmlFor="sosmedLain" className="-ml-[10px] lg: pl-[30px] mr-[10px] peer-checked:bg-[#F5F7FF] bg-white rounded-2xl border peer-checked:border-[#5885E9] hover:border-[#5885E9] border-[#B0B1B0] p-2 peer-checked:text-[#5885E9] text-[13px] text-center">Lainnya</label>
                                             </div>
@@ -205,9 +205,9 @@ export default function FirstStep() {
                                     </div>              
                                 <input 
                                     type="text" 
-                                    name="sosmed" 
+                                    name="knowForm" 
                                     id="textSosmedLain" 
-                                    onChange={(e) => setUserData({...userData, "sosmed" : e.target.value})} 
+                                    onChange={(e) => setUserData({...userData, "knowForm" : e.target.value})} 
                                     className='-ml-[50px] outline-none focus:ring-1 focus:ring-[#5885E9] text-[13px] rounded-2xl p-2 pl-10 pr-8 mt-[20px] border z-10' 
                                     placeholder='Masukkan sumber lain'/>
                             </div>
@@ -215,7 +215,7 @@ export default function FirstStep() {
                         <div>
                             <button 
                                 type='submit' 
-                                onClick={nextStep} 
+                                onClick={() => setStep(2)} 
                                 className=' mr-0 ml-auto block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'
                                 >
                                     Berikutnya

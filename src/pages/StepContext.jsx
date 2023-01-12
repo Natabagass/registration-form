@@ -1,3 +1,4 @@
+import axios from "axios";
 import App from "next/app";
 import React, { useState } from "react";
 import HomePage from "./header/HomePage";
@@ -9,24 +10,27 @@ const StepContext = () => {
     const [userData, setUserData] = useState([])
     const [finalData, setFinalData] = useState([])
 
-    function submitData(){
-        setFinalData(finalData=>[...finalData, userData]);
-        setUserData('')
-        setStep(currentStep + 1)
+    const getData = () => {
+        axios.get('https://backendmern.technologytorch.repl.co/api/v1/users/register',
+        {
+            data: userData
+        })
+        .then(res => {
+            console.log(res)
+        }).catch(err=>{
+            console.log(err)
+        })
     }
 
-    function nextStep(){
-        if (userData == null){
-            setUserData('')
-            alert('Isi dulu')
-        } else{
-            setStep(currentStep + 1)
-        }
+    function submitData(){
+        getData
+        setFinalData(finalData=>[...finalData, userData]);
+        setUserData('')
     }
 
     return ( 
         <div>
-            <multiStepContext.Provider value={{currentStep, setStep, userData, setUserData, finalData, setFinalData, submitData, nextStep}} >
+            <multiStepContext.Provider value={{currentStep, sendData, setStep, userData, setUserData, finalData, setFinalData}} >
                 <HomePage />
             </multiStepContext.Provider>
         </div>

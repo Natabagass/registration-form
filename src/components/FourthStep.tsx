@@ -87,6 +87,7 @@ export default function FourthStep() {
                                                     <input
                                                         type="date"
                                                         id="tanggal"
+                                                        name='schedule'
                                                         onFocus={(e) => (e.target.type = "date")}
                                                         onBlur={(e) => (e.target.type = "text")}
                                                         className=" font-Cairo border botder-[#A7ABB8] p-3 rounded-2xl text-[13px] placeholder:text-[#727272] outline-none focus:border-[#5885E9] block w-full pl-10   "
@@ -168,9 +169,9 @@ export default function FourthStep() {
                                 </div>
                                 <textarea
                                     rows={4}
-                                    onChange={(e) => setUserData({ ...userData, "catatanTutor": e.target.value })}
-                                    value={userData['catatanTutor']}
-                                    name='catatanTutor'
+                                    onChange={(e) => setUserData({ ...userData, "messageForTutor": e.target.value })}
+                                    value={userData['messageForTutor']}
+                                    name='messageForTutor'
                                     className='border outline-none h-[200px] flex items-start focus:ring-2  hover:border-[#4D74CC] focus:border-[#5885E9] w-full pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
                                     required
                                     placeholder='Tuliskan masukkanmu disini' />
@@ -183,9 +184,9 @@ export default function FourthStep() {
                             </div>
                             <input
                                 type="text"
-                                onChange={(e) => setUserData({ ...userData, "kodeRef": e.target.value })}
-                                value={userData['kodeRef']}
-                                name='kodeRef'
+                                onChange={(e) => setUserData({ ...userData, "referralCode": e.target.value })}
+                                value={userData['referralCode']}
+                                name='referralCode'
                                 className='border outline-none hover:border-[#4D74CC] focus:border-[#5885E9] w-[320px] lg:w-[500px] pl-[40px] text-[13px] mt-[10px] border-[#B0B1B0] rounded-2xl p-2'
                                 required
                                 placeholder='Masukkan Kode Referal' />
@@ -197,7 +198,7 @@ export default function FourthStep() {
                     </div>
                     <div className='flex flex-row'>
                         <button type='submit' onClick={() => setStep(3)} className='mr-10 ml-auto block font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-[#5885E9] p-3 font-bold'>Kembali</button>
-                        <button type='submit' onClick={submitData} className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Submit</button>
+                        <button type='submit' onClick={() => setStep(5)} className='mr-0  block bg-[#5885E9] font-Cairo rounded-xl mt-[100px] mb-[50px] px-5 text-white p-3 font-bold shadow-effect'>Berikutnya</button>
                     </div>
                 </div>
             </form>
